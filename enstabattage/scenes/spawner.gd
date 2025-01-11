@@ -22,9 +22,9 @@ func _spawn_entity():
 	var angle = rng.randf_range(minimum_angle, maximum_angle)
 	var vel = rng.randf_range(minimum_velocity, maximum_velocity)
 
-	entity.global_position = pos
+	entity.position = pos
 	entity.velocity = Vector2(vel, 0).rotated(angle)
-	get_parent().add_child(entity)
+	add_child(entity)
 
 func _on_spawn_timer_timeout():
 	_spawn_entity()
