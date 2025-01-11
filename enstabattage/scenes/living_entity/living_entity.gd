@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name LivingEntity
 
 
 const SPEED = 300.0

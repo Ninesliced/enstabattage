@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://bf32w02crli2w"]
+
+[ext_resource type="PackedScene" uid="uid://b0incnrjyhb6k" path="res://scenes/living_entity/living_entity.tscn" id="1_xvuyw"]
+[ext_resource type="Texture2D" uid="uid://b5oi31qkqd6d" path="res://images/penguin.png" id="2_ugr5h"]
+[ext_resource type="Script" path="res://scenes/living_entity/penguin.gd" id="2_wggt2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bg2bw"]
+atlas = ExtResource("2_ugr5h")
+region = Rect2(0, 0, 27, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_afnx4"]
+atlas = ExtResource("2_ugr5h")
+region = Rect2(27, 0, 27, 17)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lnxsi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bg2bw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_afnx4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="LivingEntity" instance=ExtResource("1_xvuyw")]
+script = ExtResource("2_wggt2")
+init_velocity = Vector2(0, 0)
+life = 10
+
+[node name="Sprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_lnxsi")
+frame_progress = 0.228712

@@ -1,8 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://b0incnrjyhb6k"]
+[gd_scene load_steps=4 format=3 uid="uid://b0incnrjyhb6k"]
 
 [ext_resource type="Script" path="res://scenes/living_entity/living_entity.gd" id="1_m1h5f"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_bya7e"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2w1ka"]
 radius = 35.0143
@@ -15,17 +13,15 @@ collision_mask = 0
 script = ExtResource("1_m1h5f")
 life = 20
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(4.76837e-07, 4.76837e-07)
-scale = Vector2(24, 24)
-texture = SubResource("PlaceholderTexture2D_bya7e")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="ClickArea" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea"]
 shape = SubResource("CircleShape2D_2w1ka")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_5goo5")
 
-[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="input_event" from="ClickArea" to="." method="_on_area_2d_input_event"]
