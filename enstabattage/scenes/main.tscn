@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://clyqecgv0s0hq"]
 
-[ext_resource type="PackedScene" uid="uid://dj2dvpotg4682" path="res://scenes/spawner.tscn" id="1_igtxp"]
+[ext_resource type="PackedScene" path="res://scenes/spawner.tscn" id="1_igtxp"]
 
 [node name="Main" type="Node2D"]
 
