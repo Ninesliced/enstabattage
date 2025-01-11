@@ -6,3 +6,4 @@
 
 [node name="LivingEntity" parent="." instance=ExtResource("1_pawvp")]
 position = Vector2(158, 190)
+life = 15
