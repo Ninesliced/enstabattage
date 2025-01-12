@@ -1,12 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b0incnrjyhb6k"]
+[gd_scene load_steps=3 format=3 uid="uid://b0incnrjyhb6k"]
 
 [ext_resource type="Script" path="res://scenes/living_entity/living_entity.gd" id="1_m1h5f"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_2w1ka"]
-radius = 20.0998
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5goo5"]
-size = Vector2(24, 24)
+[sub_resource type="CircleShape2D" id="CircleShape2D_ora57"]
+radius = 4.0
 
 [node name="LivingEntity" type="CharacterBody2D"]
 collision_mask = 0
@@ -14,14 +11,6 @@ script = ExtResource("1_m1h5f")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(4.76837e-07, 4.76837e-07)
-
-[node name="ClickArea" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea"]
-shape = SubResource("CircleShape2D_2w1ka")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_5goo5")
 
 [node name="LifeDisplay" type="ProgressBar" parent="."]
 offset_left = -35.0
@@ -32,4 +21,5 @@ mouse_filter = 2
 value = 64.01
 show_percentage = false
 
-[connection signal="input_event" from="ClickArea" to="." method="_on_area_2d_input_event"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ora57")

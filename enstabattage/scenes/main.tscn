@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://clyqecgv0s0hq"]
+[gd_scene load_steps=4 format=3 uid="uid://clyqecgv0s0hq"]
 
 [ext_resource type="PackedScene" uid="uid://dj2dvpotg4682" path="res://scenes/spawner/spawner.tscn" id="1_igtxp"]
+[ext_resource type="PackedScene" uid="uid://b7geavubjufdv" path="res://scenes/kill_plane/kill_plane.tscn" id="2_d2x57"]
+[ext_resource type="PackedScene" uid="uid://b7lb664s1a8f5" path="res://scenes/touch_manager/touch_manager.tscn" id="3_26ion"]
 
 [node name="Main" type="Node2D"]
 
@@ -12,3 +14,24 @@ minimum_angle = -0.523599
 maximum_angle = 0.523599
 minimum_velocity = 20.0
 maximum_velocity = 50.0
+
+[node name="KillPlane" parent="." instance=ExtResource("2_d2x57")]
+position = Vector2(64, -66)
+scale = Vector2(1.495, 1.495)
+
+[node name="KillPlane2" parent="." instance=ExtResource("2_d2x57")]
+position = Vector2(208, 124)
+rotation = 1.5708
+scale = Vector2(2.155, 2.155)
+
+[node name="KillPlane3" parent="." instance=ExtResource("2_d2x57")]
+position = Vector2(62, 334)
+scale = Vector2(1.41, 1.41)
+
+[node name="KillPlane4" parent="." instance=ExtResource("2_d2x57")]
+position = Vector2(-80, 134)
+rotation = 1.5708
+scale = Vector2(2.155, 2.155)
+
+[node name="TouchManager" parent="." instance=ExtResource("3_26ion")]
+entity_path = "res://scenes/touch_manager/normal_touch/normal_touch.tscn"
