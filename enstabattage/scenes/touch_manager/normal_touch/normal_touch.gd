@@ -1,10 +1,10 @@
 extends Area2D
 class_name Touch
-@export var damage = 1
-@export var coodown_time = .2
 @onready var flash = $Flash
 @onready var hit_box = $HitBox
 @onready var life_span_timer = $LifeSpanTimer
+@export var damage = 1
+@export var coodown_time = .2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
