@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://t16fwiy06e5p"]
+
+[ext_resource type="PackedScene" uid="uid://dacit8thtelyx" path="res://scenes/touch_manager/shot_touch/shot_touch.tscn" id="1_sa47u"]
+
+[node name="ShotTouch" instance=ExtResource("1_sa47u")]
+entity_path = "res://scenes/touch_manager/big_shot_touch/big_shot_normal_touch.tscn"
+shot_number = 20
+coodown_time = 0.3
+shot_radius = 50

@@ -1,15 +1,15 @@
 [gd_scene load_steps=7 format=3 uid="uid://dim0u7u0ttvx7"]
 
-[ext_resource type="PackedScene" uid="uid://bf32w02crli2w" path="res://scenes/enemy/enemy.tscn" id="1_poxc6"]
-[ext_resource type="Texture2D" uid="uid://b5oi31qkqd6d" path="res://images/penguin.png" id="2_1gwx6"]
-[ext_resource type="Script" path="res://scenes/enemy/penguin.gd" id="2_37fhh"]
+[ext_resource type="PackedScene" uid="uid://bf32w02crli2w" path="res://scenes/enemy/enemy.tscn" id="1_8yhyr"]
+[ext_resource type="Script" path="res://scenes/enemy/penguin/penguin.gd" id="2_be5pn"]
+[ext_resource type="Texture2D" uid="uid://b5oi31qkqd6d" path="res://images/penguin.png" id="3_5b8nq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8btjh"]
-atlas = ExtResource("2_1gwx6")
+atlas = ExtResource("3_5b8nq")
 region = Rect2(0, 0, 27, 17)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3xeuo"]
-atlas = ExtResource("2_1gwx6")
+atlas = ExtResource("3_5b8nq")
 region = Rect2(27, 0, 27, 17)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_br0t3"]
@@ -26,8 +26,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Penguin" instance=ExtResource("1_poxc6")]
-script = ExtResource("2_37fhh")
+[node name="Penguin" instance=ExtResource("1_8yhyr")]
+script = ExtResource("2_be5pn")
 move_back_force = 100.0
 
 [node name="Sprite2D" parent="." index="0"]
