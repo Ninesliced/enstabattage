@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bf32w02crli2w" path="res://scenes/enemy/enemy.tscn" id="1_poxc6"]
 [ext_resource type="Texture2D" uid="uid://b5oi31qkqd6d" path="res://images/penguin.png" id="2_1gwx6"]
-[ext_resource type="Script" path="res://scenes/enemy/penguin.gd" id="2_37fhh"]
+[ext_resource type="Script" path="res://scenes/enemy/penguin/penguin.gd" id="2_37fhh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8btjh"]
 atlas = ExtResource("2_1gwx6")
@@ -29,6 +29,7 @@ animations = [{
 [node name="Penguin" instance=ExtResource("1_poxc6")]
 script = ExtResource("2_37fhh")
 move_back_force = 100.0
+particle_path = ""
 
 [node name="Sprite2D" parent="." index="0"]
 position = Vector2(0, 0)

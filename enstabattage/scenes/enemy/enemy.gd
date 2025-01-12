@@ -12,6 +12,7 @@ var particle_file : PackedScene
 
 func _ready() -> void:
 	super()
+	print("particle_path ", particle_path)
 	particle_file = load(particle_path)
 
 func _process(delta: float) -> void:
@@ -19,9 +20,9 @@ func _process(delta: float) -> void:
 
 func _on_died() -> void:
 	var particle = particle_file.instantiate()
-	particle.set_global_position(global_position)
 	particle.emitting = true
 	get_parent().add_child(particle)
+	particle.set_global_position(global_position)
 	Global.add_money(1)
 
 

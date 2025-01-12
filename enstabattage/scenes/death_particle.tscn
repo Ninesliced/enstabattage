@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://coep83lsvif25"]
+[gd_scene load_steps=5 format=3 uid="uid://b2nlrdy8qwhlw"]
 
 [ext_resource type="Texture2D" uid="uid://dbm67nvtkeftm" path="res://images/particles/circle.png" id="1_mmptd"]
 
@@ -17,6 +17,7 @@ offsets = PackedFloat32Array(0, 0.486667, 1)
 colors = PackedColorArray(0.529412, 0, 0, 1, 0.398817, 0.0122507, 0.0128919, 1, 0.261066, 0.0251726, 0.0264902, 1)
 
 [node name="DeathParticle" type="CPUParticles2D"]
+z_index = -10
 emitting = false
 amount = 100
 lifetime = 0.3
