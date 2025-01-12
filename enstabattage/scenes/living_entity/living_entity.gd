@@ -20,7 +20,6 @@ func _physics_process(delta: float) -> void:
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventScreenTouch and event.is_pressed():
 		life -= 1
-		print(life)
 		
 	update_life_display()
 		
@@ -33,5 +32,4 @@ func update_life_display():
 		
 func die():
 	died.emit()
-	print("qsjgdh")
 	queue_free()

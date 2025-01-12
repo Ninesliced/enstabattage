@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://clyqecgv0s0hq"]
+[gd_scene load_steps=3 format=3 uid="uid://clyqecgv0s0hq"]
 
 [ext_resource type="PackedScene" uid="uid://dj2dvpotg4682" path="res://scenes/spawner/spawner.tscn" id="1_igtxp"]
+[ext_resource type="PackedScene" uid="uid://d2olp7hr7jofr" path="res://scenes/ui/hud.tscn" id="2_58nek"]
 
 [node name="Main" type="Node2D"]
 
@@ -12,3 +13,7 @@ minimum_angle = -0.523599
 maximum_angle = 0.523599
 minimum_velocity = 20.0
 maximum_velocity = 50.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Hud" parent="CanvasLayer" instance=ExtResource("2_58nek")]

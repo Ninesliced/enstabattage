@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2olp7hr7jofr"]
+
+[ext_resource type="Theme" uid="uid://bjgel0idhd2yw" path="res://themes/main_theme.tres" id="1_nc16f"]
+[ext_resource type="Script" path="res://scenes/ui/hud.gd" id="1_wmst7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wgxct"]
+shadow_size = 0
+shadow_color = Color(0, 0, 0, 0.670588)
+
+[node name="Hud" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_wmst7")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="ScoreDisplay" type="Label" parent="MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = ExtResource("1_nc16f")
+text = "123"
+label_settings = SubResource("LabelSettings_wgxct")
