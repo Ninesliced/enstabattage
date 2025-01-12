@@ -29,10 +29,9 @@ func init_life_display():
 func update_life_display():
 	life_display.value = life
 
-func damage(damager,damage_amount):
-	if damager.is_touchable == not is_touchable:
-		life -= damage_amount
-		update_life_display()
+func damage(damager, damage_amount):
+	life -= damage_amount
+	update_life_display()
 
 func die():
 	died.emit()

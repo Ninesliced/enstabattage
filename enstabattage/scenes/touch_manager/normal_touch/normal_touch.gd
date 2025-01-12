@@ -1,7 +1,6 @@
 extends Area2D
 class_name Touch
 @export var damage = 1
-@export var is_enemy = false
 @export var coodown_time = .2
 @onready var flash = $Flash
 @onready var hit_box = $HitBox
@@ -19,7 +18,7 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_body_entered(body: Node2D) -> void:
-	if body is LivingEntity:
+	if body is LivingEntity and body.is_touchable:
 		body.damage(self,damage)
 
 
