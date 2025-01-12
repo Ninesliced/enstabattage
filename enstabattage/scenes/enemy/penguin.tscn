@@ -33,4 +33,4 @@ move_back_force = 100.0
 [node name="Sprite2D" parent="." index="0"]
 position = Vector2(0, 0)
 sprite_frames = SubResource("SpriteFrames_br0t3")
-frame_progress = 0.120702
+frame_progress = 0.46044
