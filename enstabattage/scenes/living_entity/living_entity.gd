@@ -5,6 +5,7 @@ signal died
 @export var max_life = 10
 @onready var life = max_life
 @export var is_touchable = true
+@export var is_enemy = false
 
 @onready var life_display = $LifeDisplay
 @onready var sprite = $Sprite2D
@@ -29,9 +30,13 @@ func init_life_display():
 func update_life_display():
 	life_display.value = life
 
-func damage(damager, damage_amount):
+func deal_knockback(direction:Vector2, amount:float):
+	velocity = direction * amount
+
+func deal_damage(damager, damage_amount):
 	life -= damage_amount
 	update_life_display()
+
 
 func die():
 	died.emit()

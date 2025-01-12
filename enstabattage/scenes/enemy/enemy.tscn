@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bf32w02crli2w"]
+[gd_scene load_steps=8 format=3 uid="uid://bf32w02crli2w"]
 
 [ext_resource type="PackedScene" uid="uid://b0incnrjyhb6k" path="res://scenes/living_entity/living_entity.tscn" id="1_ucae0"]
 [ext_resource type="Script" path="res://scenes/enemy/enemy.gd" id="2_b68ly"]
@@ -26,12 +26,24 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_hlbux"]
+radius = 19.0263
+
 [node name="Enemy" instance=ExtResource("1_ucae0")]
 script = ExtResource("2_b68ly")
+damage = 1
 max_life = 3
+is_enemy = true
 
 [node name="Sprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_lnxsi")
 frame_progress = 0.228712
 
+[node name="HurtBox" type="Area2D" parent="." index="3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" index="0"]
+shape = SubResource("CircleShape2D_hlbux")
+debug_color = Color(1, 0, 0.166667, 0.290196)
+
 [connection signal="died" from="." to="." method="_on_died"]
+[connection signal="body_entered" from="HurtBox" to="." method="_on_hurt_box_body_entered"]
