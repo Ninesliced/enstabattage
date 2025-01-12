@@ -5,6 +5,7 @@ class_name Touch
 @onready var life_span_timer = $LifeSpanTimer
 @export var damage = 1
 @export var coodown_time = .2
+@export var is_auto = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

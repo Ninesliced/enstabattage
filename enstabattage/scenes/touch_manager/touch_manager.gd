@@ -9,8 +9,9 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventScreenTouch and event.is_pressed() and cooldown.is_stopped():
-		var entity = entity_file.instantiate()
+	var entity = entity_file.instantiate()
+	if ((event is InputEventScreenTouch and event.is_pressed()) or (event is InputEventScreenDrag and entity.is_auto) ) and cooldown.is_stopped():
+		entity = entity_file.instantiate()
 		entity.position = event.position
 		add_child(entity)
 		cooldown.wait_time = entity.coodown_time
