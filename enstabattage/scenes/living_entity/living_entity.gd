@@ -2,14 +2,19 @@ extends CharacterBody2D
 class_name LivingEntity
 signal died
 
-@onready var life_display = $LifeDisplay
 @export var max_life = 10
 @onready var life = max_life
 @export var is_enemy = true
 
+@onready var life_display = $LifeDisplay
+@onready var sprite = $Sprite2D
+
 func _ready() -> void:
 	life_display.max_value = max_life
 	init_life_display()
+
+func _process(delta: float) -> void:
+	sprite.flip_h = velocity.x >= 0
 
 func _physics_process(delta: float) -> void:
 	move_and_slide()

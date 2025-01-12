@@ -3,4 +3,5 @@
 [ext_resource type="FontFile" uid="uid://bm7ei8ouuwcd4" path="res://fonts/Awe Mono Gold.ttf" id="1_k2i5g"]
 
 [resource]
+Button/fonts/font = ExtResource("1_k2i5g")
 Label/fonts/font = ExtResource("1_k2i5g")

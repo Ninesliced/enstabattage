@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://d2olp7hr7jofr"]
+[gd_scene load_steps=5 format=3 uid="uid://d2olp7hr7jofr"]
 
 [ext_resource type="Theme" uid="uid://bjgel0idhd2yw" path="res://themes/main_theme.tres" id="1_nc16f"]
 [ext_resource type="Script" path="res://scenes/ui/hud.gd" id="1_wmst7"]
+[ext_resource type="Texture2D" uid="uid://55o8asjvqygf" path="res://images/ui/pause.png" id="2_w6yld"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_wgxct"]
 shadow_size = 0
@@ -29,6 +30,16 @@ theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
+[node name="Buttons" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="PauseButton" type="Button" parent="MarginContainer/Buttons"]
+layout_mode = 2
+icon = ExtResource("2_w6yld")
+flat = true
+
 [node name="ScoreDisplay" type="Label" parent="MarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
@@ -37,3 +48,5 @@ size_flags_vertical = 0
 theme = ExtResource("1_nc16f")
 text = "123"
 label_settings = SubResource("LabelSettings_wgxct")
+
+[connection signal="pressed" from="MarginContainer/Buttons/PauseButton" to="." method="_on_pause_button_pressed"]
