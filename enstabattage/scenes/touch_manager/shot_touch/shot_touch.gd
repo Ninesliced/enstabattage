@@ -3,6 +3,7 @@ extends Node2D
 @export var shot_number = 5
 @export var coodown_time = .1
 @export var shot_radius = 30
+@export var is_auto = false
 
 var rng = RandomNumberGenerator.new()
 
