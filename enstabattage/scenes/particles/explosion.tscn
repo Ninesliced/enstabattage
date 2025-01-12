@@ -95,8 +95,8 @@ point_count = 2
 
 [sub_resource type="Gradient" id="Gradient_8yde7"]
 interpolation_mode = 1
-offsets = PackedFloat32Array(0, 0.290323, 0.529032, 0.783871)
-colors = PackedColorArray(0.54, 0.54, 0.54, 1, 0.287, 0.30955, 0.41, 1, 0.10776, 0.1026, 0.18, 1, 0, 0, 0, 1)
+offsets = PackedFloat32Array(0, 0.290323, 0.522581, 0.770968)
+colors = PackedColorArray(0.54, 0.54, 0.54, 1, 0.287, 0.30955, 0.41, 1, 0.1922, 0.200053, 0.31, 1, 0.10776, 0.1026, 0.18, 1)
 
 [sub_resource type="Gradient" id="Gradient_jhe12"]
 interpolation_mode = 1
@@ -158,7 +158,7 @@ emitting = false
 amount = 30
 lifetime = 0.6
 one_shot = true
-explosiveness = 0.75
+explosiveness = 0.86
 texture = ExtResource("1_qxcgh")
 emission_shape = 1
 emission_sphere_radius = 30.0
