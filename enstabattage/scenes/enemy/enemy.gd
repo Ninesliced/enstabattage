@@ -6,7 +6,7 @@ class_name Enemy
 var rng = RandomNumberGenerator.new()
 
 func _process(delta: float) -> void:
-	pass
+	super(delta)
 
 func _on_died() -> void:
 	Global.add_money(1)

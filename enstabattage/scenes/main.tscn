@@ -51,7 +51,7 @@ entity_path = "res://scenes/touch_manager/mini_touch/mini_touch.tscn"
 
 [node name="Tower" parent="." instance=ExtResource("4_64jbq")]
 position = Vector2(67, 234)
-max_life = 400
+max_life = 800
 is_touchable = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
