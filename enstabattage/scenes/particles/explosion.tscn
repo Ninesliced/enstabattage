@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://bitxoyoliufsx"]
+[gd_scene load_steps=13 format=3 uid="uid://bitxoyoliufsx"]
 
 [ext_resource type="Texture2D" uid="uid://dbm67nvtkeftm" path="res://images/particles/circle.png" id="1_qxcgh"]
+[ext_resource type="Script" path="res://scenes/particles/explosion.gd" id="1_r6mfa"]
 [ext_resource type="Texture2D" uid="uid://cgh5llrqlrgjf" path="res://images/particles/explosion_flash.png" id="2_aaq6y"]
 [ext_resource type="Animation" uid="uid://dqutr2gemv62w" path="res://scenes/particles/explosion.tres" id="3_1r5go"]
 
@@ -152,8 +153,10 @@ _data = {
 libraries = {
 "": SubResource("AnimationLibrary_yuj1x")
 }
+script = ExtResource("1_r6mfa")
 
 [node name="Smoke" type="CPUParticles2D" parent="."]
+position = Vector2(52, 62)
 emitting = false
 amount = 30
 lifetime = 0.6
@@ -169,6 +172,7 @@ scale_amount_curve = SubResource("Curve_a5oo8")
 color_ramp = SubResource("Gradient_8yde7")
 
 [node name="Fire" type="CPUParticles2D" parent="."]
+position = Vector2(52, 62)
 emitting = false
 amount = 30
 lifetime = 0.5
@@ -184,6 +188,7 @@ scale_amount_curve = SubResource("Curve_a5oo8")
 color_ramp = SubResource("Gradient_jhe12")
 
 [node name="Flash" type="CPUParticles2D" parent="."]
+position = Vector2(52, 62)
 emitting = false
 amount = 1
 lifetime = 0.03
