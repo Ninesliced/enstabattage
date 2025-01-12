@@ -2,11 +2,15 @@ extends Area2D
 class_name Touch
 @export var damage = 1
 @export var is_enemy = false
+@export var coodown_time = .2
 @onready var flash = $Flash
 @onready var hit_box = $HitBox
+@onready var life_span_timer = $LifeSpanTimer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	flash.hide()
+	hit_box.disabled = true
 	pass # Replace with function body.
 
 
@@ -20,16 +24,11 @@ func _on_body_entered(body: Node2D) -> void:
 
 
 func _on_start_timer_timeout() -> void:
-	pass
+	flash.show()
+	hit_box.disabled = false
+	life_span_timer.start()
+	
 
 
 func _on_life_span_timer_timeout() -> void:
 	queue_free()
-
-func disable_and_hide_node(node:Node) -> void:
-	node.process_mode = 4 # = Mode: Disabled
-	node.hide()
-
-func enable_and_show_node(node:Node) -> void:
-	node.process_mode = 0 # = Mode: Inherit
-	node.show()
