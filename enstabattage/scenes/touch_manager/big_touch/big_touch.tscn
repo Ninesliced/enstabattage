@@ -7,6 +7,7 @@
 [node name="NormalTouch" instance=ExtResource("1_11b8g")]
 script = ExtResource("1_qrv42")
 damage = 3
+coodown_time = 2.0
 
 [node name="Flash" parent="." index="0"]
 position = Vector2(-2.02656e-06, 9.53674e-07)

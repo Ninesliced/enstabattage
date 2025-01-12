@@ -6,3 +6,4 @@
 script = ExtResource("1_nc5pq")
 
 [node name="Cooldown" type="Timer" parent="."]
+one_shot = true
