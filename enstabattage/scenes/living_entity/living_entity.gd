@@ -4,7 +4,7 @@ signal died
 
 @export var max_life = 10
 @onready var life = max_life
-@export var is_enemy = true
+@export var is_touchable = true
 
 @onready var life_display = $LifeDisplay
 @onready var sprite = $Sprite2D
@@ -30,7 +30,7 @@ func update_life_display():
 	life_display.value = life
 
 func damage(damager,damage_amount):
-	if damager.is_enemy == not is_enemy:
+	if damager.is_touchable == not is_touchable:
 		life -= damage_amount
 		update_life_display()
 
