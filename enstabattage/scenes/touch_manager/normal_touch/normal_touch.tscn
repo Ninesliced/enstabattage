@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bq8f3316p327" path="res://icon.svg" id="2_un2y3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_31g3u"]
-radius = 11.0
+radius = 30.0167
 
 [node name="NormalTouch" type="Area2D"]
 script = ExtResource("1_u8l8g")
@@ -19,10 +19,13 @@ shape = SubResource("CircleShape2D_31g3u")
 
 [node name="StartTimer" type="Timer" parent="."]
 process_callback = 0
-wait_time = 0.1
+wait_time = 0.05
+one_shot = true
 autostart = true
 
 [node name="LifeSpanTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]

@@ -37,7 +37,7 @@ rotation = 1.5708
 scale = Vector2(2.155, 2.155)
 
 [node name="TouchManager" parent="." instance=ExtResource("3_26ion")]
-entity_path = "res://scenes/touch_manager/normal_touch/normal_touch.tscn"
+entity_path = "res://scenes/touch_manager/big_touch/big_touch.tscn"
 
 [node name="Tower" parent="." instance=ExtResource("4_64jbq")]
 position = Vector2(67, 234)

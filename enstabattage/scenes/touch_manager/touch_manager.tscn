@@ -4,3 +4,5 @@
 
 [node name="TouchManager" type="Node2D"]
 script = ExtResource("1_nc5pq")
+
+[node name="Cooldown" type="Timer" parent="."]
