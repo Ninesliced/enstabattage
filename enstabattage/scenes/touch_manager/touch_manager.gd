@@ -18,5 +18,5 @@ func _input(event: InputEvent) -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	print(cooldown.wait_time)
+	print(cooldown.time_left)
 	pass
