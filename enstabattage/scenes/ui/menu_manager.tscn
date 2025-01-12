@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=3 uid="uid://bie5rkhunkbxw"]
+
+[ext_resource type="Script" path="res://scenes/ui/menu_manager.gd" id="1_nqwof"]
+[ext_resource type="Shader" path="res://shaders/pause_menu_background.gdshader" id="2_3rcm0"]
+[ext_resource type="PackedScene" uid="uid://dhmh23lj2uxf" path="res://scenes/ui/pause_menu.tscn" id="2_fa61x"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_bms1h"]
+random_pitch = 1.1
+streams_count = 4
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kavfq"]
+shader = ExtResource("2_3rcm0")
+shader_parameter/amount = 0.0
+
+[node name="MenuManager" type="CanvasLayer"]
+process_mode = 3
+layer = 2
+visible = false
+script = ExtResource("1_nqwof")
+
+[node name="TransitionAudio" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_bms1h")
+volume_db = 6.0
+
+[node name="Background" type="Control" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DarkBlackground" type="ColorRect" parent="Background"]
+z_index = -200
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.666667)
+
+[node name="BlurBackground" type="ColorRect" parent="Background"]
+z_index = -200
+material = SubResource("ShaderMaterial_kavfq")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.666667)
+
+[node name="Menus" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PauseMenu" parent="Menus" instance=ExtResource("2_fa61x")]
+layout_mode = 1
