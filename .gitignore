@@ -1,5 +1,7 @@
 # Godot 4+ specific ignores
 .godot/
+enstabattage/android/
+export/
 
 # Godot-specific ignores
 .import/
@@ -7,6 +9,7 @@ export.cfg
 export_presets.cfg
 
 # Imported translations (automatically generated from CSV files)
+*.aseprite
 *.translation
 
 # Mono-specific ignores
