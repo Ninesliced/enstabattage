@@ -13,6 +13,8 @@ config_version=5
 config/name="ENST'Abattage"
 run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
+boot_splash/bg_color=Color(0.894118, 1, 0.866667, 1)
+boot_splash/image="res://images/splash.png"
 config/icon="res://icon.svg"
 
 [autoload]
