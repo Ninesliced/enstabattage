@@ -12,7 +12,7 @@
 
 [node name="Spawner" parent="." instance=ExtResource("1_igtxp")]
 position = Vector2(95, -17)
-entity_path = "res://scenes/enemy/penguin.tscn"
+entity_path = "res://scenes/enemy/penguin/penguin.tscn"
 spawn_radius = 10.0
 minimum_angle = 1.13446
 maximum_angle = 2.00713
@@ -21,7 +21,7 @@ maximum_velocity = 50.0
 
 [node name="Spawner2" parent="." instance=ExtResource("1_igtxp")]
 position = Vector2(43, -16)
-entity_path = "res://scenes/enemy/penguin.tscn"
+entity_path = "res://scenes/enemy/penguin/penguin.tscn"
 spawn_radius = 10.0
 minimum_angle = 1.13446
 maximum_angle = 2.00713
@@ -47,7 +47,7 @@ rotation = 1.5708
 scale = Vector2(2.155, 2.155)
 
 [node name="TouchManager" parent="." instance=ExtResource("3_26ion")]
-entity_path = "res://scenes/touch_manager/mini_touch/mini_touch.tscn"
+entity_path = "res://scenes/touch_manager/big_shot_touch/big_shot_touch.tscn"
 
 [node name="Tower" parent="." instance=ExtResource("4_64jbq")]
 position = Vector2(67, 234)
