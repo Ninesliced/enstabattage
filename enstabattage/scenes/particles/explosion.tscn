@@ -1,0 +1,196 @@
+[gd_scene load_steps=12 format=3 uid="uid://bitxoyoliufsx"]
+
+[ext_resource type="Texture2D" uid="uid://dbm67nvtkeftm" path="res://images/particles/circle.png" id="1_qxcgh"]
+[ext_resource type="Texture2D" uid="uid://cgh5llrqlrgjf" path="res://images/particles/explosion_flash.png" id="2_aaq6y"]
+[ext_resource type="Animation" uid="uid://dqutr2gemv62w" path="res://scenes/particles/explosion.tres" id="3_1r5go"]
+
+[sub_resource type="Animation" id="Animation_7a4ih"]
+resource_name = "explosion"
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Explosion/Flash:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Explosion/Fire:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.04),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Explosion/Smoke:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.27),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_4y7jt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Explosion/Flash:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Explosion/Fire:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Explosion/Smoke:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yuj1x"]
+_data = {
+"RESET": SubResource("Animation_4y7jt"),
+"explosion": SubResource("Animation_7a4ih")
+}
+
+[sub_resource type="Curve" id="Curve_a5oo8"]
+_data = [Vector2(0, 1), 0.0, -1.67566, 0, 0, Vector2(0.990815, 0.00945807), -1.33275, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_8yde7"]
+offsets = PackedFloat32Array(0, 0.516129, 1)
+colors = PackedColorArray(0.54, 0.54, 0.54, 1, 0.1224, 0.13296, 0.18, 1, 0, 0, 0, 1)
+
+[sub_resource type="Gradient" id="Gradient_jhe12"]
+offsets = PackedFloat32Array(0, 0.312903, 0.548387, 0.741935, 0.874194, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 0.916667, 0, 1, 0.88, 0.555867, 0.132, 1, 0.7, 0.07, 0.07, 1, 0.268533, 0.2128, 0.38, 1, 0.115, 0.0975, 0.15, 1)
+
+[sub_resource type="Animation" id="Animation_v5xug"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fire:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Smoke:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Flash:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bvrub"]
+_data = {
+"RESET": SubResource("Animation_v5xug"),
+"explosion": ExtResource("3_1r5go")
+}
+
+[node name="Explosion" type="AnimationPlayer"]
+libraries = {
+"": SubResource("AnimationLibrary_yuj1x")
+}
+
+[node name="Smoke" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 30
+lifetime = 0.6
+one_shot = true
+explosiveness = 0.75
+texture = ExtResource("1_qxcgh")
+emission_shape = 1
+emission_sphere_radius = 30.0
+gravity = Vector2(0, 0)
+scale_amount_min = 0.7
+scale_amount_max = 1.3
+scale_amount_curve = SubResource("Curve_a5oo8")
+color_ramp = SubResource("Gradient_8yde7")
+
+[node name="Fire" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 30
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.75
+texture = ExtResource("1_qxcgh")
+emission_shape = 1
+emission_sphere_radius = 30.0
+gravity = Vector2(0, 0)
+scale_amount_min = 0.9
+scale_amount_max = 1.4
+scale_amount_curve = SubResource("Curve_a5oo8")
+color_ramp = SubResource("Gradient_jhe12")
+
+[node name="Flash" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 1
+lifetime = 0.03
+one_shot = true
+texture = ExtResource("2_aaq6y")
+gravity = Vector2(0, 0)
+angle_max = 360.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_bvrub")
+}

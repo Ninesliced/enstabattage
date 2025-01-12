@@ -21,7 +21,7 @@ func _on_hurt_box_body_entered(body:Node2D):
 
 func flash_white():
 	var tween: Tween = create_tween()
-	tween.tween_property(sprite, "modulate:v", 1, 0.25).from(15)
+	tween.tween_property(sprite, "modulate:v", 1, 0.1).from(15)
 
 func _on_damaged(_damager, _damage_amount):
 	animation_player.play("damaged")
