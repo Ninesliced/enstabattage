@@ -19,7 +19,7 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is LivingEntity and body.is_touchable:
-		body.damage(self,damage)
+		body.deal_damage(self, damage)
 
 
 func _on_start_timer_timeout() -> void:
