@@ -1,5 +1,6 @@
 extends CharacterBody2D
 class_name LivingEntity
+signal died
 
 @onready var life_display = $LifeDisplay
 @export var max_life = 10
@@ -11,15 +12,15 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	move_and_slide()
+	
+	if life <= 0:
+		die()
 
 
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventScreenTouch and event.is_pressed():
 		life -= 1
 		print(life)
-		
-	if life <= 0:
-		die()
 		
 	update_life_display()
 		
@@ -31,4 +32,6 @@ func update_life_display():
 	life_display.value = life
 		
 func die():
+	died.emit()
+	print("qsjgdh")
 	queue_free()

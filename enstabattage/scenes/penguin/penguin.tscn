@@ -32,3 +32,5 @@ script = ExtResource("2_1piyt")
 [node name="Sprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_lnxsi")
 frame_progress = 0.228712
+
+[connection signal="died" from="." to="." method="_on_died"]

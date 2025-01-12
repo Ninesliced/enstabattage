@@ -5,10 +5,10 @@
 [node name="Main" type="Node2D"]
 
 [node name="Spawner" parent="." instance=ExtResource("1_igtxp")]
-position = Vector2(24, 113)
+position = Vector2(-20, 114)
 entity_path = "res://scenes/penguin/penguin.tscn"
-spawn_radius = 30.0
+spawn_radius = 10.0
 minimum_angle = -0.523599
 maximum_angle = 0.523599
 minimum_velocity = 20.0
-maximum_velocity = 100.0
+maximum_velocity = 50.0
