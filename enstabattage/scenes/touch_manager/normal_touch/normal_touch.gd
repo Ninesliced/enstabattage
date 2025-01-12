@@ -3,6 +3,7 @@ class_name Touch
 @onready var flash = $Flash
 @onready var hit_box = $HitBox
 @onready var life_span_timer = $LifeSpanTimer
+@onready var life
 @export var damage = 1
 @export var coodown_time = .2
 @export var is_auto = false
@@ -27,6 +28,7 @@ func _on_body_entered(body: Node2D) -> void:
 
 func _on_start_timer_timeout() -> void:
 	flash.show()
+	flash.play("default")
 	hit_box.disabled = false
 	life_span_timer.start()
 	

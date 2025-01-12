@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://coep83lsvif25"]
+
+[ext_resource type="Texture2D" uid="uid://dbm67nvtkeftm" path="res://images/particles/circle.png" id="1_mmptd"]
+
+[sub_resource type="Curve" id="Curve_70hkj"]
+max_value = 100.0
+_data = [Vector2(0, 100), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_6415w"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.0224719, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_xuo7g"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.486667, 1)
+colors = PackedColorArray(0.529412, 0, 0, 1, 0.398817, 0.0122507, 0.0128919, 1, 0.261066, 0.0251726, 0.0264902, 1)
+
+[node name="DeathParticle" type="CPUParticles2D"]
+emitting = false
+amount = 100
+lifetime = 0.3
+one_shot = true
+explosiveness = 0.8
+lifetime_randomness = 0.24
+texture = ExtResource("1_mmptd")
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 400.0
+damping_min = 25.0
+damping_max = 50.0
+damping_curve = SubResource("Curve_70hkj")
+scale_amount_min = 0.4
+scale_amount_max = 0.5
+scale_amount_curve = SubResource("Curve_6415w")
+color_initial_ramp = SubResource("Gradient_xuo7g")

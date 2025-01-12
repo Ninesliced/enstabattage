@@ -2,15 +2,26 @@ extends LivingEntity
 class_name Enemy
 
 @export var damage = 1
+@export_file("*.tscn") var particle_path: String
 
 @onready var animation_player = $AnimationPlayer
+@onready var death_particle = $DeathParticle
 
 var rng = RandomNumberGenerator.new()
+var particle_file : PackedScene
+
+func _ready() -> void:
+	super()
+	particle_file = load(particle_path)
 
 func _process(delta: float) -> void:
 	super(delta)
 
 func _on_died() -> void:
+	var particle = particle_file.instantiate()
+	particle.set_global_position(global_position)
+	particle.emitting = true
+	get_parent().add_child(particle)
 	Global.add_money(1)
 
 

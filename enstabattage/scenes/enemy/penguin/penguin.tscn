@@ -34,3 +34,6 @@ move_back_force = 100.0
 position = Vector2(0, 0)
 sprite_frames = SubResource("SpriteFrames_br0t3")
 frame_progress = 0.46044
+
+[node name="LifeDisplay" parent="." index="1"]
+visible = false
