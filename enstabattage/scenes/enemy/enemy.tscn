@@ -1,33 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bf32w02crli2w"]
+[gd_scene load_steps=4 format=3 uid="uid://bf32w02crli2w"]
 
 [ext_resource type="PackedScene" uid="uid://b0incnrjyhb6k" path="res://scenes/living_entity/living_entity.tscn" id="1_ucae0"]
 [ext_resource type="Script" path="res://scenes/enemy/enemy.gd" id="2_b68ly"]
-[ext_resource type="Texture2D" uid="uid://b5oi31qkqd6d" path="res://images/penguin.png" id="3_raxw8"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bg2bw"]
-atlas = ExtResource("3_raxw8")
-region = Rect2(0, 0, 27, 17)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_afnx4"]
-atlas = ExtResource("3_raxw8")
-region = Rect2(27, 0, 27, 17)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_lnxsi"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bg2bw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_afnx4")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hlbux"]
-radius = 19.0263
+radius = 7.0
 
 [node name="Enemy" instance=ExtResource("1_ucae0")]
 script = ExtResource("2_b68ly")
@@ -35,9 +12,8 @@ damage = 1
 max_life = 3
 is_enemy = true
 
-[node name="Sprite2D" parent="." index="0"]
-sprite_frames = SubResource("SpriteFrames_lnxsi")
-frame_progress = 0.228712
+[node name="LifeDisplay" parent="." index="1"]
+z_index = 10
 
 [node name="HurtBox" type="Area2D" parent="." index="3"]
 

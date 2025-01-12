@@ -14,6 +14,7 @@ var music_bus_name := "Music"
 @onready var transition_audio: AudioStreamPlayer2D = $TransitionAudio
 
 const MENU_TRANSITION_DURATION = 0.3
+const DEFAULT_BLUR_VALUE = 2
 
 # This is necessary because the "Back" notification is called twice on Android... for some reason...
 var back_cooldown = 0.1
@@ -66,7 +67,7 @@ func set_menu_by_node(menu: Control, add_to_stack = true, animation_direction_ri
 		return
 
 	AudioServer.set_bus_effect_enabled(_music_bus_index, 0, true)
-	_animate_background(Color.WHITE, 3)
+	_animate_background(Color.WHITE, DEFAULT_BLUR_VALUE)
 
 	show()
 	get_tree().set_pause(true)
