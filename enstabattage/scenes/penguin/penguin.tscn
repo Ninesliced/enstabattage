@@ -28,6 +28,7 @@ animations = [{
 
 [node name="LivingEntity" instance=ExtResource("1_my0x1")]
 script = ExtResource("2_1piyt")
+max_life = 3
 
 [node name="Sprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_lnxsi")
