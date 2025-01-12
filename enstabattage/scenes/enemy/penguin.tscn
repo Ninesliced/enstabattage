@@ -28,6 +28,7 @@ animations = [{
 
 [node name="Penguin" instance=ExtResource("1_poxc6")]
 script = ExtResource("2_37fhh")
+move_back_force = 100.0
 
 [node name="Sprite2D" parent="." index="0"]
 position = Vector2(0, 0)
