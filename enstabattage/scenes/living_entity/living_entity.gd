@@ -1,5 +1,7 @@
 extends CharacterBody2D
 class_name LivingEntity
+
+signal damaged(damager: Node2D, damage_amount: float)
 signal died
 
 @export var max_life = 10
@@ -37,6 +39,7 @@ func deal_knockback(direction:Vector2, amount:float):
 
 func deal_damage(damager, damage_amount):
 	life -= damage_amount
+	damaged.emit(damager, damage_amount)
 
 func die():
 	died.emit()

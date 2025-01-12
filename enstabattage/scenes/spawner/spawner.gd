@@ -6,8 +6,10 @@ extends Node2D
 @export_range(-360, 360, 0.1, "radians_as_degrees") var maximum_angle: float = 0.0
 @export var minimum_velocity = 1.0
 @export var maximum_velocity = 2.0
+@export var minimum_delay = 0.5
+@export var maximum_delay = 1.0
 
-@onready var spawn_timer = $SpawnTimer
+@onready var spawn_timer: Timer = $SpawnTimer
 
 var rng = RandomNumberGenerator.new()
 
@@ -15,6 +17,7 @@ var entity_file: PackedScene
 func _ready():
 	rng.randomize()
 	entity_file = load(entity_path)
+	_init_timer()
 
 func _spawn_entity():
 	var entity = entity_file.instantiate()
@@ -28,3 +31,8 @@ func _spawn_entity():
 
 func _on_spawn_timer_timeout():
 	_spawn_entity()
+	_init_timer()
+
+func _init_timer():
+	spawn_timer.wait_time = rng.randf_range(minimum_delay, maximum_delay)
+	spawn_timer.start()

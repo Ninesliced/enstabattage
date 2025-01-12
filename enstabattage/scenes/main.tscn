@@ -18,6 +18,8 @@ minimum_angle = 1.13446
 maximum_angle = 2.00713
 minimum_velocity = 20.0
 maximum_velocity = 50.0
+minimum_delay = 0.3
+maximum_delay = 0.6
 
 [node name="Spawner2" parent="." instance=ExtResource("1_igtxp")]
 position = Vector2(43, -16)
@@ -27,30 +29,42 @@ minimum_angle = 1.13446
 maximum_angle = 2.00713
 minimum_velocity = 20.0
 maximum_velocity = 50.0
+minimum_delay = 0.3
+maximum_delay = 0.6
 
-[node name="KillPlane" parent="." instance=ExtResource("2_d2x57")]
+[node name="Level" type="Node2D" parent="."]
 position = Vector2(64, -66)
 scale = Vector2(1.495, 1.495)
 
-[node name="KillPlane2" parent="." instance=ExtResource("2_d2x57")]
-position = Vector2(208, 124)
-rotation = 1.5708
-scale = Vector2(2.155, 2.155)
+[node name="KillPlane" parent="Level" instance=ExtResource("2_d2x57")]
 
-[node name="KillPlane3" parent="." instance=ExtResource("2_d2x57")]
-position = Vector2(62, 334)
-scale = Vector2(1.41, 1.41)
-
-[node name="KillPlane4" parent="." instance=ExtResource("2_d2x57")]
-position = Vector2(-80, 134)
+[node name="KillPlane2" parent="Level" instance=ExtResource("2_d2x57")]
+position = Vector2(96.3211, 127.09)
 rotation = 1.5708
-scale = Vector2(2.155, 2.155)
+scale = Vector2(1.44147, 1.44147)
+
+[node name="KillPlane3" parent="Level" instance=ExtResource("2_d2x57")]
+position = Vector2(-1.33779, 267.559)
+scale = Vector2(0.943144, 0.943144)
+
+[node name="KillPlane4" parent="Level" instance=ExtResource("2_d2x57")]
+position = Vector2(-96.3211, 133.779)
+rotation = 1.5708
+scale = Vector2(1.44147, 1.44147)
+
+[node name="YBouncePlane" parent="Level" instance=ExtResource("7_ycdx8")]
+position = Vector2(54.8495, 125.084)
+scale = Vector2(0.668896, 0.668896)
+
+[node name="YBouncePlane2" parent="Level" instance=ExtResource("7_ycdx8")]
+position = Vector2(-50.1672, 127.759)
+scale = Vector2(0.668896, 0.668896)
 
 [node name="TouchManager" parent="." instance=ExtResource("3_26ion")]
 entity_path = "res://scenes/touch_manager/mini_touch/mini_touch.tscn"
 
 [node name="Tower" parent="." instance=ExtResource("4_64jbq")]
-position = Vector2(67, 234)
+position = Vector2(66, 200)
 max_life = 800
 is_touchable = false
 
@@ -60,9 +74,3 @@ is_touchable = false
 
 [node name="MenuManager" parent="." instance=ExtResource("6_gvx64")]
 script = null
-
-[node name="YBouncePlane" parent="." instance=ExtResource("7_ycdx8")]
-position = Vector2(146, 121)
-
-[node name="YBouncePlane2" parent="." instance=ExtResource("7_ycdx8")]
-position = Vector2(-11, 125)
