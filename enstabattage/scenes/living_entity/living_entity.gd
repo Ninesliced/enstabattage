@@ -5,6 +5,7 @@ signal died
 @onready var life_display = $LifeDisplay
 @export var max_life = 10
 @onready var life = max_life
+@export var is_enemy = true
 
 func _ready() -> void:
 	life_display.max_value = max_life
@@ -23,9 +24,10 @@ func init_life_display():
 func update_life_display():
 	life_display.value = life
 
-func damage(damage_amount):
-	life -= damage_amount
-	update_life_display()
+func damage(damager,damage_amount):
+	if damager.is_enemy == not is_enemy:
+		life -= damage_amount
+		update_life_display()
 
 func die():
 	died.emit()
