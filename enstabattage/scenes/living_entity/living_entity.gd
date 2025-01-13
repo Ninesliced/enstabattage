@@ -18,7 +18,7 @@ func _ready() -> void:
 	init_life_display()
 
 func _process(delta: float) -> void:
-	sprite.flip_h = velocity.x >= 0
+	sprite.flip_h = velocity.x > 0
 	update_life_display()
 
 func _physics_process(delta: float) -> void:

@@ -2,13 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://b0incnrjyhb6k" path="res://scenes/living_entity/living_entity.tscn" id="1_21r67"]
 [ext_resource type="Script" path="res://scenes/tower/tower.gd" id="2_nvh3m"]
-[ext_resource type="Texture2D" uid="uid://bq8f3316p327" path="res://icon.svg" id="3_23hgv"]
+[ext_resource type="Texture2D" uid="uid://ce3gvs7kaicuq" path="res://images/entities/batiment.png" id="3_dj38p"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_mp3ym"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_yctlt"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_23hgv")
+"texture": ExtResource("3_dj38p")
 }],
 "loop": true,
 "name": &"default",
@@ -22,14 +22,12 @@ size = Vector2(166, 52)
 script = ExtResource("2_nvh3m")
 
 [node name="Sprite2D" parent="." index="0"]
-modulate = Color(0, 1, 0.0999999, 1)
-position = Vector2(9.53674e-07, 0)
-scale = Vector2(1.29688, 0.40625)
-sprite_frames = SubResource("SpriteFrames_mp3ym")
+position = Vector2(1.5, 8.5)
+sprite_frames = SubResource("SpriteFrames_yctlt")
 
 [node name="LifeDisplay" parent="." index="1"]
-offset_top = -37.0
-offset_bottom = -32.0
+offset_top = -44.0
+offset_bottom = -39.0
 
 [node name="CollisionShape2D" parent="." index="2"]
 shape = SubResource("RectangleShape2D_fmucb")
