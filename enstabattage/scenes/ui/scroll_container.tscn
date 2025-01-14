@@ -30,11 +30,11 @@ offset_bottom = 222.0
 theme = SubResource("Theme_bsoix")
 script = ExtResource("1_dglgy")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Touch1" type="HBoxContainer" parent="VBoxContainer"]
+[node name="Touch1" type="VBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -56,50 +56,6 @@ size_flags_horizontal = 4
 theme = ExtResource("1_seb31")
 text = "upgrade"
 
-[node name="Touch2" type="HBoxContainer" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-alignment = 1
-script = ExtResource("1_uotqq")
-touch_path = "res://scenes/touch_manager/normal_touch/normal_touch.tscn"
-unlock_price = 1
-
-[node name="Label" type="Label" parent="VBoxContainer/Touch2"]
-layout_mode = 2
-size_flags_horizontal = 6
-theme = ExtResource("1_seb31")
-horizontal_alignment = 1
-
-[node name="Button" type="Button" parent="VBoxContainer/Touch2"]
-custom_minimum_size = Vector2(70, 0)
-layout_mode = 2
-size_flags_horizontal = 4
-theme = ExtResource("1_seb31")
-text = "upgrade"
-
-[node name="Touch3" type="HBoxContainer" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-alignment = 1
-script = ExtResource("1_uotqq")
-touch_path = "res://scenes/touch_manager/normal_touch/normal_touch.tscn"
-unlock_price = 1
-
-[node name="Label" type="Label" parent="VBoxContainer/Touch3"]
-layout_mode = 2
-size_flags_horizontal = 6
-theme = ExtResource("1_seb31")
-horizontal_alignment = 1
-
-[node name="Button" type="Button" parent="VBoxContainer/Touch3"]
-custom_minimum_size = Vector2(70, 0)
-layout_mode = 2
-size_flags_horizontal = 4
-theme = ExtResource("1_seb31")
-text = "upgrade"
+[node name="Icone" type="Sprite2D" parent="VBoxContainer/Touch1"]
 
 [connection signal="pressed" from="VBoxContainer/Touch1/Button" to="VBoxContainer/Touch1" method="_on_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/Touch2/Button" to="VBoxContainer/Touch2" method="_on_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/Touch3/Button" to="VBoxContainer/Touch3" method="_on_button_pressed"]

@@ -1,4 +1,4 @@
-extends HBoxContainer
+extends VBoxContainer
 
 
 @export_file("*.tscn") var touch_path: String

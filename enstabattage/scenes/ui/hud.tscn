@@ -53,7 +53,6 @@ label_settings = SubResource("LabelSettings_wgxct")
 
 [node name="ScrollContainer" parent="." instance=ExtResource("4_wihnb")]
 layout_mode = 0
-anchors_preset = 0
 offset_left = 0.0
 offset_top = 184.0
 offset_right = 129.0
