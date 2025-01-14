@@ -1,4 +1,4 @@
-extends Control
+extends Menu
 
 
 func _on_continue_pressed():

@@ -5,8 +5,8 @@ var menu_stack: Array = []
 var current_menu: Control = null
 var can_back := true
 
-var music_bus_name := "Music"
-@onready var _music_bus_index := AudioServer.get_bus_index(music_bus_name)
+# var music_bus_name := "Music"
+# @onready var _music_bus_index := AudioServer.get_bus_index(music_bus_name)
 
 @onready var background: Control = $Background
 @onready var blur_background: Control = $Background/BlurBackground
@@ -42,7 +42,7 @@ func exit_menu():
 	menu_stack = []
 	get_tree().paused = false
 	
-	AudioServer.set_bus_effect_enabled(_music_bus_index, 0, false)
+	# AudioServer.set_bus_effect_enabled(_music_bus_index, 0, false)
 	
 	_animate_background(Color.TRANSPARENT, 0)
 	var viewport_width = get_viewport().get_visible_rect().size.x
@@ -66,7 +66,7 @@ func set_menu_by_node(menu: Control, add_to_stack = true, animation_direction_ri
 	if not menu:
 		return
 
-	AudioServer.set_bus_effect_enabled(_music_bus_index, 0, true)
+	# AudioServer.set_bus_effect_enabled(_music_bus_index, 0, true)
 	_animate_background(Color.WHITE, DEFAULT_BLUR_VALUE)
 
 	show()
@@ -82,6 +82,7 @@ func set_menu_by_node(menu: Control, add_to_stack = true, animation_direction_ri
 		_animate_menu(current_menu, Vector2.ZERO, Vector2(-viewport_width * animation_sign, 0), true)
 
 	menu.show()
+	menu.menu_set.emit()
 	_animate_menu(menu, Vector2(animation_sign * viewport_width, 0), Vector2(0, 0))
 
 	current_menu = menu

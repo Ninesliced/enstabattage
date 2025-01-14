@@ -1,0 +1,71 @@
+[gd_scene load_steps=5 format=3 uid="uid://bo8bd6v8tthtl"]
+
+[ext_resource type="Theme" uid="uid://bjgel0idhd2yw" path="res://themes/main_theme.tres" id="1_mtlp4"]
+[ext_resource type="Script" path="res://scenes/ui/pause_menu.gd" id="2_k56q4"]
+[ext_resource type="FontFile" uid="uid://j5gomqfo3au6" path="res://fonts/Varnished.ttf" id="4_clffy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wdbgj"]
+font_size = 8
+
+[node name="PauseMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_mtlp4")
+script = ExtResource("2_k56q4")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Items" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="MarginContainer/Items"]
+custom_minimum_size = Vector2(24, 0)
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("1_mtlp4")
+text = "Choisissez votre nom"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="MarginContainer/Items"]
+layout_mode = 2
+theme = ExtResource("1_mtlp4")
+max_length = 32
+
+[node name="Continue" type="Button" parent="MarginContainer/Items"]
+layout_mode = 2
+text = "Continuer"
+
+[node name="Footer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Links" type="HBoxContainer" parent="MarginContainer/Footer"]
+layout_mode = 2
+size_flags_vertical = 8
+alignment = 1
+
+[node name="Credits" type="Label" parent="MarginContainer/Footer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("4_clffy")
+text = "Par Gaspard & Leo"
+label_settings = SubResource("LabelSettings_wdbgj")
+horizontal_alignment = 1
+
+[connection signal="pressed" from="MarginContainer/Items/Continue" to="." method="_on_continue_pressed"]

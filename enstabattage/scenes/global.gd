@@ -17,6 +17,7 @@ func add_money(amount):
 
 func game_over():
 	menu_manager.set_menu("GameOverMenu")
+	Leaderboard.upload_score(money)
 
 func restart():
 	money = 0
