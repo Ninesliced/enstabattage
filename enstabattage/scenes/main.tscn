@@ -47,17 +47,6 @@ maximum_velocity = 50.0
 minimum_delay = 0.1
 maximum_delay = 0.1
 
-[node name="Spawner2" parent="." instance=ExtResource("1_igtxp")]
-position = Vector2(43, -16)
-entity_path = "res://scenes/enemy/penguin/penguin.tscn"
-spawn_radius = 10.0
-minimum_angle = 1.13446
-maximum_angle = 2.00713
-minimum_velocity = 20.0
-maximum_velocity = 50.0
-minimum_delay = 0.1
-maximum_delay = 0.1
-
 [node name="Level" type="Node2D" parent="."]
 position = Vector2(64, -66)
 scale = Vector2(1.495, 1.495)
@@ -91,7 +80,7 @@ entity_path = "res://scenes/touch_manager/big_shot_touch/big_shot_touch.tscn"
 
 [node name="Tower" parent="." instance=ExtResource("4_64jbq")]
 position = Vector2(66, 200)
-max_life = 200
+max_life = 8000
 is_touchable = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
