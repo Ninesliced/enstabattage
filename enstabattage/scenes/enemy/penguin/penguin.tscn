@@ -37,3 +37,5 @@ frame_progress = 0.46044
 
 [node name="LifeDisplay" parent="." index="1"]
 visible = false
+custom_minimum_size = Vector2(0, 0)
+theme = null
