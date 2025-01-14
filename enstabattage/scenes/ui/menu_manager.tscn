@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bb432u67ug6vb"]
+[gd_scene load_steps=7 format=3 uid="uid://bie5rkhunkbxw"]
 
 [ext_resource type="Script" path="res://scenes/ui/menu_manager.gd" id="1_nqwof"]
 [ext_resource type="Shader" path="res://shaders/pause_menu_background.gdshader" id="2_3rcm0"]
-[ext_resource type="PackedScene" path="res://scenes/ui/pause_menu.tscn" id="2_fa61x"]
+[ext_resource type="PackedScene" uid="uid://dhmh23lj2uxf" path="res://scenes/ui/pause_menu.tscn" id="2_fa61x"]
+[ext_resource type="PackedScene" uid="uid://dje4400aeoead" path="res://scenes/ui/game_over_menu.tscn" id="4_5mkst"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_bms1h"]
 random_pitch = 1.1
@@ -61,4 +62,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="PauseMenu" parent="Menus" instance=ExtResource("2_fa61x")]
+layout_mode = 1
+
+[node name="GameOverMenu" parent="Menus" instance=ExtResource("4_5mkst")]
 layout_mode = 1

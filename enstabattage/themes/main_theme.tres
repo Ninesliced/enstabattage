@@ -1,7 +1,62 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bjgel0idhd2yw"]
+[gd_resource type="Theme" load_steps=13 format=3 uid="uid://bjgel0idhd2yw"]
 
 [ext_resource type="FontFile" uid="uid://bm7ei8ouuwcd4" path="res://fonts/Awe Mono Gold.ttf" id="1_k2i5g"]
+[ext_resource type="Texture2D" uid="uid://dq6x2ep6jtsdq" path="res://images/ui/button_pressed.png" id="2_g15qj"]
+[ext_resource type="Texture2D" uid="uid://b45p66csxiqmv" path="res://images/ui/button.png" id="2_sn0i8"]
+[ext_resource type="Texture2D" uid="uid://bhe2fxgl4gra2" path="res://images/health_bar.png" id="2_xrbtt"]
+[ext_resource type="Texture2D" uid="uid://do4ny0vj63lfc" path="res://images/ui/button_hover.png" id="3_ttxe5"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8t278"]
+texture = ExtResource("2_g15qj")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gnw7l"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3ag45"]
+texture = ExtResource("3_ttxe5")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(0, 0, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f7e1i"]
+texture = ExtResource("2_sn0i8")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(0, 0, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yfxbo"]
+texture = ExtResource("2_g15qj")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lkoky"]
+texture = ExtResource("2_xrbtt")
+texture_margin_left = 4.0
+texture_margin_right = 4.0
+region_rect = Rect2(0, 7, 11, 7)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bivyg"]
+texture = ExtResource("2_xrbtt")
+texture_margin_left = 4.0
+texture_margin_right = 4.0
+region_rect = Rect2(-1, 0, 12, 7)
 
 [resource]
 Button/fonts/font = ExtResource("1_k2i5g")
+Button/styles/disabled = SubResource("StyleBoxTexture_8t278")
+Button/styles/focus = SubResource("StyleBoxEmpty_gnw7l")
+Button/styles/hover = SubResource("StyleBoxTexture_3ag45")
+Button/styles/normal = SubResource("StyleBoxTexture_f7e1i")
+Button/styles/pressed = SubResource("StyleBoxTexture_yfxbo")
 Label/fonts/font = ExtResource("1_k2i5g")
+ProgressBar/styles/background = SubResource("StyleBoxTexture_lkoky")
+ProgressBar/styles/fill = SubResource("StyleBoxTexture_bivyg")

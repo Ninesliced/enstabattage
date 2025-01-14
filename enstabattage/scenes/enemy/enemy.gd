@@ -5,7 +5,6 @@ class_name Enemy
 @export_file("*.tscn") var particle_path: String
 
 @onready var animation_player = $AnimationPlayer
-@onready var death_particle = $DeathParticle
 
 var rng = RandomNumberGenerator.new()
 var particle_file : PackedScene
