@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://dhmh23lj2uxf"]
+[gd_scene load_steps=6 format=3 uid="uid://dhmh23lj2uxf"]
 
 [ext_resource type="Theme" uid="uid://bjgel0idhd2yw" path="res://themes/main_theme.tres" id="1_evnm0"]
 [ext_resource type="Script" path="res://scenes/ui/pause_menu.gd" id="2_ascqm"]
 [ext_resource type="Texture2D" uid="uid://1wugb7ptkutc" path="res://images/ui/instagram.png" id="3_hhho8"]
+[ext_resource type="FontFile" uid="uid://j5gomqfo3au6" path="res://fonts/Varnished.ttf" id="4_y0mpb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wdbgj"]
+font_size = 8
 
 [node name="PauseMenu" type="Control"]
 layout_mode = 3
@@ -45,16 +49,29 @@ text = "Continuer"
 layout_mode = 2
 text = "Réessayer"
 
-[node name="Links" type="HBoxContainer" parent="MarginContainer"]
+[node name="Footer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Links" type="HBoxContainer" parent="MarginContainer/Footer"]
 layout_mode = 2
 size_flags_vertical = 8
 alignment = 1
 
-[node name="Insta" type="Button" parent="MarginContainer/Links"]
+[node name="Insta" type="Button" parent="MarginContainer/Footer/Links"]
 layout_mode = 2
+theme = ExtResource("1_evnm0")
 icon = ExtResource("3_hhho8")
+
+[node name="Credits" type="Label" parent="MarginContainer/Footer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("4_y0mpb")
+text = "Par Gaspard & Leo"
+label_settings = SubResource("LabelSettings_wdbgj")
+horizontal_alignment = 1
 
 [connection signal="pressed" from="MarginContainer/Buttons/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="MarginContainer/Buttons/Retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="MarginContainer/Buttons/Retry" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="MarginContainer/Links/Insta" to="." method="_on_insta_pressed"]
+[connection signal="pressed" from="MarginContainer/Footer/Links/Insta" to="." method="_on_insta_pressed"]
