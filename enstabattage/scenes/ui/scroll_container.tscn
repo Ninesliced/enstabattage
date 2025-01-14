@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://dtl8x10k160bt"]
+[gd_scene load_steps=11 format=3 uid="uid://dtl8x10k160bt"]
 
 [ext_resource type="Script" path="res://scenes/ui/scroll_container.gd" id="1_dglgy"]
 [ext_resource type="Theme" uid="uid://bjgel0idhd2yw" path="res://themes/main_theme.tres" id="1_seb31"]
 [ext_resource type="Script" path="res://scenes/ui/touch_1.gd" id="1_uotqq"]
+[ext_resource type="Texture2D" uid="uid://6kn6oh0ce0je" path="res://images/touches/touch_normal.png" id="4_1ggd5"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fqg5y"]
 
@@ -44,18 +45,34 @@ touch_path = "res://scenes/touch_manager/normal_touch/normal_touch.tscn"
 unlock_price = 1
 
 [node name="Label" type="Label" parent="VBoxContainer/Touch1"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 6
 theme = ExtResource("1_seb31")
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="VBoxContainer/Touch1"]
-custom_minimum_size = Vector2(70, 0)
+custom_minimum_size = Vector2(30, 40)
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("1_seb31")
-text = "upgrade"
 
-[node name="Icone" type="Sprite2D" parent="VBoxContainer/Touch1"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Touch1/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Touch1/Button/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("4_1ggd5")
+stretch_mode = 3
 
 [connection signal="pressed" from="VBoxContainer/Touch1/Button" to="VBoxContainer/Touch1" method="_on_button_pressed"]
