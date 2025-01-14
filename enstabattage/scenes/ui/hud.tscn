@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://d2olp7hr7jofr"]
+[gd_scene load_steps=6 format=3 uid="uid://d2olp7hr7jofr"]
 
 [ext_resource type="Theme" uid="uid://bjgel0idhd2yw" path="res://themes/main_theme.tres" id="1_nc16f"]
 [ext_resource type="Script" path="res://scenes/ui/hud.gd" id="1_wmst7"]
 [ext_resource type="Texture2D" uid="uid://55o8asjvqygf" path="res://images/ui/pause.png" id="2_w6yld"]
+[ext_resource type="PackedScene" uid="uid://dtl8x10k160bt" path="res://scenes/ui/scroll_container.tscn" id="4_wihnb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_wgxct"]
 shadow_size = 0
@@ -49,5 +50,13 @@ size_flags_vertical = 0
 theme = ExtResource("1_nc16f")
 text = "123"
 label_settings = SubResource("LabelSettings_wgxct")
+
+[node name="ScrollContainer" parent="." instance=ExtResource("4_wihnb")]
+layout_mode = 0
+anchors_preset = 0
+offset_left = 0.0
+offset_top = 184.0
+offset_right = 129.0
+offset_bottom = 232.0
 
 [connection signal="pressed" from="MarginContainer/Buttons/PauseButton" to="." method="_on_pause_button_pressed"]
