@@ -65,7 +65,7 @@ entity_path = "res://scenes/touch_manager/big_shot_touch/big_shot_touch.tscn"
 
 [node name="Tower" parent="." instance=ExtResource("4_64jbq")]
 position = Vector2(66, 200)
-max_life = 800
+max_life = 1
 is_touchable = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

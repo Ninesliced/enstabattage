@@ -1,9 +1,7 @@
 extends Control
 
-
-func _on_continue_pressed():
-	Global.menu_manager.exit_menu()
-
+func _process(delta):
+	%Score.text = "Score: {0}€".format([Global.money])
 
 func _on_insta_pressed():
 	OS.shell_open("https://www.instagram.com/enstavengers")

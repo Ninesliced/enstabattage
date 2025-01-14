@@ -9,8 +9,16 @@ func _ready() -> void:
 	add_child(menu_manager)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func add_money(amount):
 	money += amount
+
+func game_over():
+	menu_manager.set_menu("GameOverMenu")
+
+func restart():
+	money = 0
+	menu_manager.exit_menu()
+	get_tree().reload_current_scene()

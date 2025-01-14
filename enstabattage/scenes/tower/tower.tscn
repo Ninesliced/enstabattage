@@ -31,3 +31,5 @@ offset_bottom = -39.0
 
 [node name="CollisionShape2D" parent="." index="2"]
 shape = SubResource("RectangleShape2D_fmucb")
+
+[connection signal="died" from="." to="." method="_on_died"]

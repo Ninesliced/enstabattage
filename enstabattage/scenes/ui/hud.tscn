@@ -34,6 +34,7 @@ theme_override_constants/margin_bottom = 4
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
+mouse_filter = 0
 
 [node name="PauseButton" type="Button" parent="MarginContainer/Buttons"]
 layout_mode = 2
