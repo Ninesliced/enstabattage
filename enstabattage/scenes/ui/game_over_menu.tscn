@@ -59,5 +59,6 @@ alignment = 1
 layout_mode = 2
 icon = ExtResource("3_dq6u5")
 
+[connection signal="menu_set" from="." to="." method="_on_menu_set"]
 [connection signal="pressed" from="MarginContainer/Buttons/Retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="MarginContainer/Links/Insta" to="." method="_on_insta_pressed"]
