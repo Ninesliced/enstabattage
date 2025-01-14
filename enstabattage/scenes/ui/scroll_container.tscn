@@ -1,25 +1,24 @@
-[gd_scene load_steps=11 format=3 uid="uid://dtl8x10k160bt"]
+[gd_scene load_steps=10 format=3 uid="uid://dtl8x10k160bt"]
 
 [ext_resource type="Script" path="res://scenes/ui/scroll_container.gd" id="1_dglgy"]
-[ext_resource type="Theme" uid="uid://bjgel0idhd2yw" path="res://themes/main_theme.tres" id="1_seb31"]
-[ext_resource type="Script" path="res://scenes/ui/touch_1.gd" id="1_uotqq"]
+[ext_resource type="PackedScene" uid="uid://hnc5imee2bml" path="res://scenes/ui/touch_shop_1.tscn" id="2_f43xo"]
 [ext_resource type="Texture2D" uid="uid://6kn6oh0ce0je" path="res://images/touches/touch_normal.png" id="4_1ggd5"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fqg5y"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ec27d"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ah7l2"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rl4jt"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uuata"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m6mma"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_scl8a"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_77uv3"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ywa1f"]
 
 [sub_resource type="Theme" id="Theme_bsoix"]
-VScrollBar/styles/grabber = SubResource("StyleBoxEmpty_fqg5y")
-VScrollBar/styles/grabber_highlight = SubResource("StyleBoxEmpty_ah7l2")
-VScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_uuata")
-VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_scl8a")
+VScrollBar/styles/grabber = SubResource("StyleBoxEmpty_ec27d")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxEmpty_rl4jt")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_m6mma")
+VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_77uv3")
 VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_ywa1f")
 
 [node name="ScrollContainer" type="ScrollContainer"]
@@ -35,44 +34,19 @@ script = ExtResource("1_dglgy")
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Touch1" type="VBoxContainer" parent="VBoxContainer"]
+[node name="Touch1" parent="VBoxContainer" instance=ExtResource("2_f43xo")]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-alignment = 1
-script = ExtResource("1_uotqq")
-touch_path = "res://scenes/touch_manager/normal_touch/normal_touch.tscn"
-unlock_price = 1
+touch_texture = ExtResource("4_1ggd5")
+is_unlocked = true
 
-[node name="Label" type="Label" parent="VBoxContainer/Touch1"]
-unique_name_in_owner = true
+[node name="Touch2" parent="VBoxContainer" instance=ExtResource("2_f43xo")]
 layout_mode = 2
-size_flags_horizontal = 6
-theme = ExtResource("1_seb31")
-horizontal_alignment = 1
+touch_path = "res://scenes/touch_manager/shot_touch/shot_touch.tscn"
 
-[node name="Button" type="Button" parent="VBoxContainer/Touch1"]
-custom_minimum_size = Vector2(30, 40)
+[node name="Touch3" parent="VBoxContainer" instance=ExtResource("2_f43xo")]
 layout_mode = 2
-size_flags_horizontal = 4
-theme = ExtResource("1_seb31")
+touch_path = "res://scenes/touch_manager/mini_touch/mini_touch.tscn"
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Touch1/Button"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 5
-
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Touch1/Button/MarginContainer"]
+[node name="Touch4" parent="VBoxContainer" instance=ExtResource("2_f43xo")]
 layout_mode = 2
-size_flags_vertical = 0
-texture = ExtResource("4_1ggd5")
-stretch_mode = 3
-
-[connection signal="pressed" from="VBoxContainer/Touch1/Button" to="VBoxContainer/Touch1" method="_on_button_pressed"]
+touch_path = "res://scenes/touch_manager/big_shot_touch/big_shot_touch.tscn"

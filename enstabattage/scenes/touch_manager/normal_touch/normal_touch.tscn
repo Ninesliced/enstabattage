@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c45e5sxies4ac"]
+[gd_scene load_steps=10 format=3 uid="uid://dwbbquq1cd2iy"]
 
 [ext_resource type="Script" path="res://scenes/touch_manager/normal_touch/normal_touch.gd" id="1_u8l8g"]
 [ext_resource type="Texture2D" uid="uid://bhbefrn5cqn1s" path="res://images/particles/star_splash.png" id="2_sqtx1"]

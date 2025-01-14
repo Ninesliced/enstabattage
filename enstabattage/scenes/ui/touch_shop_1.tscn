@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=3 uid="uid://hnc5imee2bml"]
+
+[ext_resource type="Script" path="res://scenes/ui/touch_1.gd" id="1_ovm4f"]
+[ext_resource type="Theme" uid="uid://bjgel0idhd2yw" path="res://themes/main_theme.tres" id="2_yc7hw"]
+[ext_resource type="FontFile" uid="uid://bffeifvu6r72v" path="res://fonts/Ant Party.ttf" id="3_w7wym"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4cvgu"]
+load_path = "res://.godot/imported/touch_normal.png-bd259191199c4a12c3a824b5ef74fb9e.ctex"
+
+[sub_resource type="LabelSettings" id="LabelSettings_oxuq1"]
+font_size = 7
+
+[node name="Touch1" type="VBoxContainer"]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+script = ExtResource("1_ovm4f")
+touch_path = "res://scenes/touch_manager/normal_touch/normal_touch.tscn"
+unlock_price = 1
+
+[node name="Button" type="Button" parent="."]
+custom_minimum_size = Vector2(29, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_yc7hw")
+theme_override_fonts/font = ExtResource("3_w7wym")
+
+[node name="MarginContainer" type="MarginContainer" parent="Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="TextureRect" type="TextureRect" parent="Button/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+texture = SubResource("CompressedTexture2D_4cvgu")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="Button/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 8
+theme = ExtResource("2_yc7hw")
+theme_override_fonts/font = ExtResource("3_w7wym")
+text = "aa"
+label_settings = SubResource("LabelSettings_oxuq1")
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

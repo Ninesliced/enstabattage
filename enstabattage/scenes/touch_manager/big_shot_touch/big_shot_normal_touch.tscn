@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://daat6vldq2ypb"]
 
-[ext_resource type="PackedScene" uid="uid://c45e5sxies4ac" path="res://scenes/touch_manager/normal_touch/normal_touch.tscn" id="1_bnkid"]
+[ext_resource type="PackedScene" uid="uid://dwbbquq1cd2iy" path="res://scenes/touch_manager/normal_touch/normal_touch.tscn" id="1_bnkid"]
 
 [node name="NormalTouch" instance=ExtResource("1_bnkid")]
 knockback_amount = 20

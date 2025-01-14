@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://2j8jch7r8mf1"]
 
-[ext_resource type="PackedScene" uid="uid://c45e5sxies4ac" path="res://scenes/touch_manager/normal_touch/normal_touch.tscn" id="1_rekts"]
+[ext_resource type="PackedScene" uid="uid://dwbbquq1cd2iy" path="res://scenes/touch_manager/normal_touch/normal_touch.tscn" id="1_rekts"]
 
 [node name="NormalTouch" instance=ExtResource("1_rekts")]
 coodown_time = 0.05

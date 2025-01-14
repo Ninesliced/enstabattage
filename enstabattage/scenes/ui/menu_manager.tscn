@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/ui/menu_manager.gd" id="1_nqwof"]
 [ext_resource type="Shader" path="res://shaders/pause_menu_background.gdshader" id="2_3rcm0"]
 [ext_resource type="PackedScene" path="res://scenes/ui/pause_menu.tscn" id="2_fa61x"]
-[ext_resource type="PackedScene" path="res://scenes/ui/game_over_menu.tscn" id="4_5mkst"]
+[ext_resource type="PackedScene" uid="uid://briwxjft3njhs" path="res://scenes/ui/game_over_menu.tscn" id="4_5mkst"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_bms1h"]
 random_pitch = 1.1
