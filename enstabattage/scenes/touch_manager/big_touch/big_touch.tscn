@@ -12,8 +12,8 @@ script = ExtResource("1_qrv42")
 damage = 2
 
 [node name="Flash" parent="." index="0"]
-position = Vector2(-2.02656e-06, 9.53674e-07)
-scale = Vector2(0.328125, 0.328125)
+position = Vector2(0, 1.90735e-06)
+scale = Vector2(3, 3)
 
 [node name="HitBox" parent="." index="1"]
 shape = SubResource("CircleShape2D_ueyba")
