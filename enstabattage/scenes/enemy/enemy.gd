@@ -11,7 +11,6 @@ var particle_file : PackedScene
 
 func _ready() -> void:
 	super()
-	print("particle_path ", particle_path)
 	particle_file = load(particle_path)
 
 func _process(delta: float) -> void:
