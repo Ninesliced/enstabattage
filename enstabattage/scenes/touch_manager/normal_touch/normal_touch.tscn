@@ -47,7 +47,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_31g3u"]
-radius = 6.0
+radius = 8.0
 
 [node name="NormalTouch" type="Area2D"]
 script = ExtResource("1_u8l8g")
@@ -55,7 +55,7 @@ coodown_time = 0.1
 
 [node name="Flash" type="AnimatedSprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.803922)
-scale = Vector2(0.675, 0.6375)
+scale = Vector2(0.885417, 0.826042)
 sprite_frames = SubResource("SpriteFrames_u4cjd")
 
 [node name="HitBox" type="CollisionShape2D" parent="."]

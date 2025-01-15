@@ -9,4 +9,3 @@ func _on_insta_pressed():
 
 func _on_retry_pressed():
 	Global.restart()
-
