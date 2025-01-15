@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=3 uid="uid://bmeahgw8mxa5v"]
+
+[ext_resource type="Theme" uid="uid://bjgel0idhd2yw" path="res://themes/main_theme.tres" id="1_fmjkk"]
+[ext_resource type="Script" path="res://scenes/ui/leaderboard_menu.gd" id="2_5r32a"]
+[ext_resource type="Texture2D" uid="uid://bv4ioko8spwbb" path="res://images/ui/back.png" id="3_boy81"]
+[ext_resource type="FontFile" uid="uid://bm7ei8ouuwcd4" path="res://fonts/Awe Mono Gold.ttf" id="4_vbfoi"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mivrs"]
+font = ExtResource("4_vbfoi")
+shadow_size = 0
+shadow_color = Color(0.0910933, 0.0832, 0.32, 0.513726)
+
+[node name="LeaderboardMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_fmjkk")
+script = ExtResource("2_5r32a")
+is_backable = null
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Items" type="VBoxContainer" parent="MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ScrollContainer/Items"]
+layout_mode = 2
+
+[node name="Back" type="Button" parent="MarginContainer/ScrollContainer/Items/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+icon = ExtResource("3_boy81")
+
+[node name="Label" type="Label" parent="MarginContainer/ScrollContainer/Items/HBoxContainer"]
+custom_minimum_size = Vector2(24, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme = ExtResource("1_fmjkk")
+text = "Classement"
+label_settings = SubResource("LabelSettings_mivrs")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Scores" type="VBoxContainer" parent="MarginContainer/ScrollContainer/Items"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[connection signal="menu_set" from="." to="." method="_on_menu_set"]
+[connection signal="pressed" from="MarginContainer/ScrollContainer/Items/HBoxContainer/Back" to="." method="_on_back_pressed"]

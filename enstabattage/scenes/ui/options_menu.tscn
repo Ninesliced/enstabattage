@@ -1,0 +1,73 @@
+[gd_scene load_steps=6 format=3 uid="uid://bi0w4u3vdcp5i"]
+
+[ext_resource type="Theme" uid="uid://bjgel0idhd2yw" path="res://themes/main_theme.tres" id="1_enrhq"]
+[ext_resource type="Script" path="res://scenes/ui/options_menu.gd" id="2_v6owm"]
+[ext_resource type="Texture2D" uid="uid://bv4ioko8spwbb" path="res://images/ui/back.png" id="3_5epsm"]
+[ext_resource type="FontFile" uid="uid://bm7ei8ouuwcd4" path="res://fonts/Awe Mono Gold.ttf" id="4_4mjcy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4pmq1"]
+font = ExtResource("4_4mjcy")
+shadow_size = 0
+shadow_color = Color(0.0910933, 0.0832, 0.32, 0.513726)
+
+[node name="OptionsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_enrhq")
+script = ExtResource("2_v6owm")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Back" type="Button" parent="MarginContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+icon = ExtResource("3_5epsm")
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(24, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme = ExtResource("1_enrhq")
+text = "Options"
+label_settings = SubResource("LabelSettings_4pmq1")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Buttons" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="ChangeName" type="Button" parent="MarginContainer/Buttons"]
+layout_mode = 2
+text = "Changer nom"
+
+[node name="Footer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Links" type="HBoxContainer" parent="MarginContainer/Footer"]
+layout_mode = 2
+size_flags_vertical = 8
+alignment = 1
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer2/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="MarginContainer/Buttons/ChangeName" to="." method="_on_change_name_pressed"]

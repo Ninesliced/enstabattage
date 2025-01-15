@@ -109,7 +109,8 @@ func back():
 func _input(event):	
 	if event.is_action_pressed("pause"):
 		if get_tree().paused:
-			back()
+			if current_menu.is_backable:
+				back()
 		else:
 			pause()
 
