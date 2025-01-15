@@ -4,11 +4,24 @@ var money = 0
 var menu_manager_file = preload("res://scenes/ui/menu_manager.tscn")
 var menu_manager: MenuManager
 
+var is_authticated = false
+
 func _ready() -> void:
+	process_mode = PROCESS_MODE_ALWAYS
+
 	menu_manager = menu_manager_file.instantiate()
 	add_child(menu_manager)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+	menu_manager.set_menu("AutheticatingMenu")
+
+	print("Autheticating...")
+	Leaderboard.authenticated.connect(_on_autheticated)
+	Leaderboard.authenticate()
+
+func _on_autheticated(_data):
+	print("Autheticated.")
+	menu_manager.set_menu("SetNameMenu")
+
 func _process(_delta: float) -> void:
 	pass
 

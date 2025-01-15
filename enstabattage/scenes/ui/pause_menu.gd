@@ -1,6 +1,5 @@
 extends Menu
 
-
 func _on_continue_pressed():
 	Global.menu_manager.exit_menu()
 

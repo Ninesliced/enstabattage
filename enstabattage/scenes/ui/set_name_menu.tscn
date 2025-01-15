@@ -1,13 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://bo8bd6v8tthtl"]
+[gd_scene load_steps=7 format=3 uid="uid://bo8bd6v8tthtl"]
 
 [ext_resource type="Theme" uid="uid://bjgel0idhd2yw" path="res://themes/main_theme.tres" id="1_mtlp4"]
-[ext_resource type="Script" path="res://scenes/ui/pause_menu.gd" id="2_k56q4"]
+[ext_resource type="Script" path="res://scenes/ui/set_name_menu.gd" id="2_7s2x5"]
 [ext_resource type="FontFile" uid="uid://j5gomqfo3au6" path="res://fonts/Varnished.ttf" id="4_clffy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mivrs"]
+shadow_size = 0
+shadow_color = Color(0.0910933, 0.0832, 0.32, 0.513726)
 
 [sub_resource type="LabelSettings" id="LabelSettings_wdbgj"]
 font_size = 8
 
-[node name="PauseMenu" type="Control"]
+[sub_resource type="LabelSettings" id="LabelSettings_17jy0"]
+font_size = 8
+font_color = Color(1, 0.598667, 0.57, 1)
+shadow_size = 0
+shadow_color = Color(0, 0, 0, 0.478431)
+
+[node name="SetNameMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,7 +25,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_mtlp4")
-script = ExtResource("2_k56q4")
+script = ExtResource("2_7s2x5")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -39,13 +49,35 @@ layout_mode = 2
 size_flags_vertical = 0
 theme = ExtResource("1_mtlp4")
 text = "Choisissez votre nom"
+label_settings = SubResource("LabelSettings_mivrs")
 horizontal_alignment = 1
 autowrap_mode = 2
 
+[node name="LabelInfo" type="Label" parent="MarginContainer/Items"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("4_clffy")
+text = "9 characteres max"
+label_settings = SubResource("LabelSettings_wdbgj")
+horizontal_alignment = 1
+
 [node name="LineEdit" type="LineEdit" parent="MarginContainer/Items"]
+unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("1_mtlp4")
-max_length = 32
+alignment = 1
+max_length = 9
+context_menu_enabled = false
+caret_blink = true
+
+[node name="ErrorInfo" type="Label" parent="MarginContainer/Items"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_clffy")
+label_settings = SubResource("LabelSettings_17jy0")
+horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="Continue" type="Button" parent="MarginContainer/Items"]
 layout_mode = 2

@@ -20,7 +20,6 @@ var level = 0
 var max_level = len(price_list)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	print(scroll_container.name)
 	touch_manager = get_node("/root/Main/TouchManager")
 	touch_file = load(touch_path)
 	touch = touch_file.instantiate()

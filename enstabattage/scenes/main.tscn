@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://mrhnguu7enbx" path="res://images/flower.png" id="2_sj3jj"]
 [ext_resource type="PackedScene" uid="uid://b7lb664s1a8f5" path="res://scenes/touch_manager/touch_manager.tscn" id="3_26ion"]
 [ext_resource type="PackedScene" uid="uid://dh4i3c1msx8ec" path="res://scenes/tower/tower.tscn" id="4_64jbq"]
-[ext_resource type="PackedScene" uid="uid://bie5rkhunkbxw" path="res://scenes/ui/menu_manager.tscn" id="6_gvx64"]
+[ext_resource type="PackedScene" uid="uid://bb432u67ug6vb" path="res://scenes/ui/menu_manager.tscn" id="6_gvx64"]
 [ext_resource type="PackedScene" uid="uid://dbwfeum8v80ky" path="res://scenes/y_bounce_plane/y_bounce_plane.tscn" id="7_ycdx8"]
 
 [node name="Main" type="Node2D"]
