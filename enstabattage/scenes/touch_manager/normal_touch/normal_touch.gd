@@ -4,7 +4,7 @@ class_name Touch
 @onready var hit_box = $HitBox
 @onready var life_span_timer = $LifeSpanTimer
 @onready var life
-@export var damage = 1
+@export var damage = 1.0
 @export var coodown_time = .2
 @export var is_auto = false
 @export var knockback_amount = 50

@@ -4,7 +4,7 @@ extends VBoxContainer
 @export_file("*.tscn") var touch_path: String
 @export var touch_texture : Texture2D
 @export var price_list = [1,1,1,1,1]
-@export var damage_list = [1,2,3,4,5]
+@export var damage_list = [1.0,2.0,3.0,4.0,5.0]
 @export var is_unlocked = false
 @export var unlock_price = 100
 @onready var button = $Button

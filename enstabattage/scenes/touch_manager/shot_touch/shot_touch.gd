@@ -4,7 +4,7 @@ extends Node2D
 @export var coodown_time = .1
 @export var shot_radius = 30
 @export var is_auto = false
-@export var damage = 1
+@export var damage = 1.0
 
 var rng = RandomNumberGenerator.new()
 
