@@ -9,7 +9,6 @@ radius = 27.0
 
 [node name="NormalTouch" instance=ExtResource("1_11b8g")]
 script = ExtResource("1_qrv42")
-damage = 2
 
 [node name="Flash" parent="." index="0"]
 position = Vector2(0, 1.90735e-06)
