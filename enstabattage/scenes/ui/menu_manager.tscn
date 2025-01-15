@@ -80,6 +80,7 @@ layout_mode = 1
 
 [node name="LeaderboardMenu" parent="Menus" instance=ExtResource("7_fi3e8")]
 layout_mode = 1
+is_backable = false
 
 [node name="OptionsMenu" parent="Menus" instance=ExtResource("8_7ke7t")]
 layout_mode = 1
