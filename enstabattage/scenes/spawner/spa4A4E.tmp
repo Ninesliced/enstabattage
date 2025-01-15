@@ -4,6 +4,17 @@
 
 [node name="Spawner" type="Node2D"]
 script = ExtResource("1_1phnf")
+entity_path = null
+spawn_radius = null
+minimum_angle = null
+maximum_angle = null
+x_pos = null
+minimum_velocity = null
+maximum_velocity = null
+minimum_delay = null
+maximum_delay = null
+time_before_spawning_start = null
+spawn_duration = null
 
 [node name="SpawnTimer" type="Timer" parent="."]
 wait_time = 0.1

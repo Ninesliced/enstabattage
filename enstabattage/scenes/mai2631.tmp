@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://clyqecgv0s0hq"]
+[gd_scene load_steps=11 format=3 uid="uid://clyqecgv0s0hq"]
 
 [ext_resource type="PackedScene" uid="uid://dj2dvpotg4682" path="res://scenes/spawner/spawner.tscn" id="1_igtxp"]
 [ext_resource type="Texture2D" uid="uid://dv8spmcftp2m0" path="res://images/grass.png" id="1_vab5n"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://dh4i3c1msx8ec" path="res://scenes/tower/tower.tscn" id="4_64jbq"]
 [ext_resource type="PackedScene" uid="uid://bb432u67ug6vb" path="res://scenes/ui/menu_manager.tscn" id="6_gvx64"]
 [ext_resource type="PackedScene" uid="uid://dbwfeum8v80ky" path="res://scenes/y_bounce_plane/y_bounce_plane.tscn" id="7_ycdx8"]
-[ext_resource type="Script" path="res://scenes/round_1.gd" id="10_ofqkf"]
 [ext_resource type="Script" path="res://scenes/spawner_manager.gd" id="10_xg33g"]
 
 [node name="Main" type="Node2D"]
@@ -37,6 +36,18 @@ texture = ExtResource("2_sj3jj")
 emission_shape = 3
 emission_rect_extents = Vector2(67, 120)
 gravity = Vector2(0, 0)
+
+[node name="Spawner" parent="." instance=ExtResource("1_igtxp")]
+position = Vector2(95, -17)
+entity_path = "res://scenes/enemy/penguin/penguin.tscn"
+spawn_radius = 10.0
+minimum_angle = 1.13446
+maximum_angle = 2.00713
+minimum_velocity = 20.0
+maximum_velocity = 50.0
+minimum_delay = 0.1
+maximum_delay = 0.5
+time_before_spawning_start = 0
 
 [node name="Level" type="Node2D" parent="."]
 position = Vector2(64, -66)
@@ -67,7 +78,7 @@ position = Vector2(-50.1672, 127.759)
 scale = Vector2(0.668896, 0.668896)
 
 [node name="TouchManager" parent="." instance=ExtResource("3_26ion")]
-entity_path = "res://scenes/touch_manager/normal_touch/normal_touch.tscn"
+entity_path = "res://scenes/touch_manager/big_shot_touch/big_shot_touch.tscn"
 
 [node name="Tower" parent="." instance=ExtResource("4_64jbq")]
 position = Vector2(66, 200)
@@ -85,16 +96,9 @@ script = null
 script = ExtResource("10_xg33g")
 
 [node name="NextRoundTimer" type="Timer" parent="SpawnerManager"]
-wait_time = 30.0
+one_shot = true
 autostart = true
 
 [node name="Round1" type="Node2D" parent="SpawnerManager"]
-script = ExtResource("10_ofqkf")
-
-[node name="Spawner" parent="SpawnerManager/Round1" instance=ExtResource("1_igtxp")]
-position = Vector2(43, 25)
-entity_path = "res://scenes/enemy/penguin/penguin.tscn"
-x_pos = 61.0
-time_before_spawning_start = 0
 
 [connection signal="timeout" from="SpawnerManager/NextRoundTimer" to="SpawnerManager" method="_on_next_round_timer_timeout"]
