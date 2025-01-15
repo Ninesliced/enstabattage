@@ -18,9 +18,12 @@ func _ready() -> void:
 	Leaderboard.authenticated.connect(_on_autheticated)
 	Leaderboard.authenticate()
 
-func _on_autheticated(_data):
+func _on_autheticated(data):
 	print("Autheticated.")
-	menu_manager.set_menu("SetNameMenu")
+	if not data.has("player_name") or data.player_name == "":
+		menu_manager.set_menu("SetNameMenu")
+	else:
+		menu_manager.exit_menu()
 
 func _process(_delta: float) -> void:
 	pass

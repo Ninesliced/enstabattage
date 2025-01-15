@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://b1sycjvsmkj1y"]
+[gd_scene load_steps=8 format=3 uid="uid://b1sycjvsmkj1y"]
 
+[ext_resource type="Script" path="res://scenes/ui/leaderboard_item.gd" id="1_oqwpq"]
 [ext_resource type="FontFile" uid="uid://j5gomqfo3au6" path="res://fonts/Varnished.ttf" id="1_wv8ok"]
 [ext_resource type="Theme" uid="uid://bjgel0idhd2yw" path="res://themes/main_theme.tres" id="2_xh7f8"]
 [ext_resource type="FontFile" uid="uid://bm7ei8ouuwcd4" path="res://fonts/Awe Mono Gold.ttf" id="3_875pm"]
@@ -24,6 +25,7 @@ shadow_color = Color(0.0910933, 0.0832, 0.32, 0.513726)
 [node name="LeaderboardItem" type="HBoxContainer"]
 size_flags_vertical = 6
 alignment = 1
+script = ExtResource("1_oqwpq")
 
 [node name="Rank" type="Label" parent="."]
 layout_mode = 2

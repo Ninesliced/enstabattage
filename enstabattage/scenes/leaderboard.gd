@@ -106,7 +106,6 @@ func _on_authentication_request_completed(_result, _response_code, _headers, bod
 	# Clear node
 	auth_http.queue_free()
 	# Get leaderboards
-	get_leaderboards()
 	authenticated.emit(data)
 
 

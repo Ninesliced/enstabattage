@@ -19,6 +19,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_fmjkk")
 script = ExtResource("2_5r32a")
+is_backable = null
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -42,7 +43,7 @@ size_flags_horizontal = 3
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ScrollContainer/Items"]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="MarginContainer/ScrollContainer/Items/HBoxContainer"]
+[node name="Back" type="Button" parent="MarginContainer/ScrollContainer/Items/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
@@ -64,3 +65,4 @@ unique_name_in_owner = true
 layout_mode = 2
 
 [connection signal="menu_set" from="." to="." method="_on_menu_set"]
+[connection signal="pressed" from="MarginContainer/ScrollContainer/Items/HBoxContainer/Back" to="." method="_on_back_pressed"]
