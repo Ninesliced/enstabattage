@@ -11,4 +11,8 @@ func _on_continue_pressed():
 		return
 
 	Leaderboard.change_player_name(text)
-	Global.restart()
+	Global.menu_manager.back()
+
+
+func _on_back_pressed():
+	Global.menu_manager.back()

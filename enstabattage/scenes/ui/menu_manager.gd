@@ -120,7 +120,6 @@ func _notification(what):
 		back()
 
 
-
 func _new_tween(node: Node, transition_type = Tween.TRANS_CUBIC, ease_type = Tween.EASE_IN_OUT) -> Tween:
 	return get_tree().create_tween().bind_node(node).set_trans(transition_type).set_ease(ease_type)
 

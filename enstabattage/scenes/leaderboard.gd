@@ -169,6 +169,19 @@ func _on_upload_score_request_completed(_result, _response_code, _headers, body)
 	score_submitted.emit(json.get_data())
 
 
+func is_name_valid(new_name: String):
+	if new_name.length() == 0:
+		return false
+
+	var re = RegEx.new()
+	re.compile("^[A-Za-zÀ-ÖØ-öø-ÿ0-9_-]+$")
+	var result = re.search(new_name)
+	if not result:
+		return false
+	
+	return true
+
+
 func change_player_name(new_name: String):
 	print("Changing player name")
 	
