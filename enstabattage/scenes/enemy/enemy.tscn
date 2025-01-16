@@ -62,6 +62,7 @@ _data = {
 script = ExtResource("2_b68ly")
 damage = 1
 particle_path = "res://scenes/death_particle.tscn"
+money_on_death = 1
 max_life = 3
 is_enemy = true
 

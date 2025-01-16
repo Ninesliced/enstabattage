@@ -3,6 +3,7 @@ class_name Enemy
 
 @export var damage = 1
 @export_file("*.tscn") var particle_path: String
+@export var money_on_death = 1
 
 @onready var animation_player = $AnimationPlayer
 
@@ -21,7 +22,7 @@ func _on_died() -> void:
 	particle.emitting = true
 	get_parent().add_child(particle)
 	particle.set_global_position(global_position)
-	Global.add_money(1)
+	Global.add_money(money_on_death)
 
 
 func _on_hurt_box_body_entered(body:Node2D):

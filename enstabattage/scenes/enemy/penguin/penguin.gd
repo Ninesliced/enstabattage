@@ -9,7 +9,6 @@ func _ready():
 	
 	base_velocity_y = velocity.y
 
-
 func _physics_process(delta):
 	velocity.y = move_toward(velocity.y, base_velocity_y, move_back_force*delta)
 

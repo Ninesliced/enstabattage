@@ -45,6 +45,7 @@ func _init_timer():
 	spawn_timer.start()
 
 func _on_spawn_delay_timeout() -> void:
+	spawn_timer.emit_signal("timeout")
 	_init_timer()
 	span_timer.start()
 	pass # Replace with function body.

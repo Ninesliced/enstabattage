@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://c13tnm6eutrqo"]
+
+[ext_resource type="PackedScene" uid="uid://dim0u7u0ttvx7" path="res://scenes/enemy/penguin/penguin.tscn" id="1_wb8f0"]
+[ext_resource type="Script" path="res://scenes/enemy/fast_penguin/fast_penguin.gd" id="2_hqtla"]
+[ext_resource type="Texture2D" uid="uid://cco3g8iyd30to" path="res://images/crocodile.png" id="3_ti5al"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xss3w"]
+atlas = ExtResource("3_ti5al")
+region = Rect2(0, 0, 48, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6rmnv"]
+atlas = ExtResource("3_ti5al")
+region = Rect2(48, 0, 48, 19)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fsr5t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xss3w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6rmnv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Penguin" instance=ExtResource("1_wb8f0")]
+script = ExtResource("2_hqtla")
+max_life = 30
+
+[node name="Sprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_fsr5t")
+frame_progress = 0.0215215
+
+[node name="LifeDisplay" parent="." index="1"]
+visible = true
