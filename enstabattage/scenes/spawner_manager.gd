@@ -1,5 +1,6 @@
 extends Node2D
 @onready var next_round_timer = $NextRoundTimer
+@onready var label = $/root/Main/CanvasLayer/Hud/RoundDisplay
 
 var rounds
 var round_number = 0
@@ -8,6 +9,7 @@ func _ready() -> void:
 	rounds = []
 	next_round_timer.wait_time = .1
 	next_round_timer.start()
+	update_label()
 	for child in self.get_children():
 		if child is Node2D:
 			rounds.append(child)
@@ -29,8 +31,11 @@ func _on_next_round_timer_timeout() -> void:
 	next_round_timer.start()
 	
 	round_number += 1
+	update_label()
 	pass # Replace with function body.
 
+func update_label():
+	label.text = "Round " + str(round_number)
 
 func _on_skip_to_next_round_pressed() -> void:
 	Global.money += round(next_round_timer.time_left / 2)

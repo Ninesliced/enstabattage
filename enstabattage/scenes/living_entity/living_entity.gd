@@ -8,7 +8,7 @@ signal died
 @export var is_touchable = true
 @export var is_enemy = false
 @export var maximum_life_bar_size = 100
-
+@export var knockback_resistance = 1
 @onready var life = max_life
 @onready var life_display = $LifeDisplay
 @onready var sprite = $Sprite2D
@@ -35,7 +35,7 @@ func update_life_display():
 	life_display.value = life
 
 func deal_knockback(direction:Vector2, amount:float):
-	velocity = direction * amount
+	velocity = direction * amount / knockback_resistance
 
 func deal_damage(damager, damage_amount):
 	life -= damage_amount

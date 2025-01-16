@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://scenes/ui/menu_manager.gd" id="1_nqwof"]
 [ext_resource type="Shader" path="res://shaders/pause_menu_background.gdshader" id="2_3rcm0"]
-[ext_resource type="PackedScene" uid="uid://dhmh23lj2uxf" path="res://scenes/ui/pause_menu.tscn" id="2_fa61x"]
+[ext_resource type="PackedScene" path="res://scenes/ui/pause_menu.tscn" id="2_fa61x"]
 [ext_resource type="PackedScene" uid="uid://briwxjft3njhs" path="res://scenes/ui/game_over_menu.tscn" id="4_5mkst"]
 [ext_resource type="PackedScene" uid="uid://bo8bd6v8tthtl" path="res://scenes/ui/set_name_menu.tscn" id="5_1c62n"]
-[ext_resource type="PackedScene" uid="uid://cs0xyqkkc7kcj" path="res://scenes/ui/autheticating_menu.tscn" id="6_as87d"]
+[ext_resource type="PackedScene" path="res://scenes/ui/autheticating_menu.tscn" id="6_as87d"]
 [ext_resource type="PackedScene" uid="uid://bmeahgw8mxa5v" path="res://scenes/ui/leaderboard_menu.tscn" id="7_fi3e8"]
-[ext_resource type="PackedScene" uid="uid://bi0w4u3vdcp5i" path="res://scenes/ui/options_menu.tscn" id="8_7ke7t"]
+[ext_resource type="PackedScene" path="res://scenes/ui/options_menu.tscn" id="8_7ke7t"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_bms1h"]
 random_pitch = 1.1
@@ -80,7 +80,6 @@ layout_mode = 1
 
 [node name="LeaderboardMenu" parent="Menus" instance=ExtResource("7_fi3e8")]
 layout_mode = 1
-is_backable = false
 
 [node name="OptionsMenu" parent="Menus" instance=ExtResource("8_7ke7t")]
 layout_mode = 1
