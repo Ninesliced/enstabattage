@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://qlkvlclfyrf7"]
+
+[ext_resource type="Theme" uid="uid://bjgel0idhd2yw" path="res://themes/main_theme.tres" id="1_iilc8"]
+[ext_resource type="FontFile" uid="uid://j5gomqfo3au6" path="res://fonts/Varnished.ttf" id="2_0m6yr"]
+[ext_resource type="Script" path="res://scenes/ui/list_option_button.gd" id="3_rotb4"]
+
+[node name="TeamOptionButton" type="OptionButton"]
+theme = ExtResource("1_iilc8")
+theme_override_fonts/font = ExtResource("2_0m6yr")
+theme_override_font_sizes/font_size = 8
+selected = 0
+fit_to_longest_item = false
+allow_reselect = true
+item_count = 6
+popup/item_0/text = "Choisir liste"
+popup/item_1/text = "ENST'Alabordage"
+popup/item_1/id = 1
+popup/item_2/text = "ENST'Alligator"
+popup/item_2/id = 2
+popup/item_3/text = "ENST'Avengers"
+popup/item_3/id = 3
+popup/item_4/text = "ENST'A4pattes"
+popup/item_4/id = 4
+popup/item_5/text = "ENST'Anonyme"
+popup/item_5/id = 5
+script = ExtResource("3_rotb4")

@@ -60,6 +60,10 @@ size_flags_vertical = 4
 layout_mode = 2
 text = "Changer nom"
 
+[node name="ChangeList" type="Button" parent="MarginContainer/Buttons"]
+layout_mode = 2
+text = "Changer liste"
+
 [node name="Footer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 8
@@ -71,3 +75,4 @@ alignment = 1
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer2/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="MarginContainer/Buttons/ChangeName" to="." method="_on_change_name_pressed"]
+[connection signal="pressed" from="MarginContainer/Buttons/ChangeList" to="." method="_on_change_list_pressed"]

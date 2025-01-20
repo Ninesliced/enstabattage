@@ -43,13 +43,11 @@ text = "Pause"
 
 [node name="Username" type="Label" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(16, 0)
 layout_mode = 2
 size_flags_vertical = 8
 theme_override_fonts/font = ExtResource("4_y0mpb")
 label_settings = SubResource("LabelSettings_wdbgj")
 horizontal_alignment = 1
-autowrap_mode = 1
 
 [node name="Buttons" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
