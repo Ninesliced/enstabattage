@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=23 format=3 uid="uid://bjgel0idhd2yw"]
+[gd_resource type="Theme" load_steps=25 format=3 uid="uid://bjgel0idhd2yw"]
 
 [ext_resource type="FontFile" uid="uid://bm7ei8ouuwcd4" path="res://fonts/Awe Mono Gold.ttf" id="1_k2i5g"]
 [ext_resource type="Texture2D" uid="uid://dq6x2ep6jtsdq" path="res://images/ui/button_pressed.png" id="2_g15qj"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bsab6jqqqvs4x" path="res://images/ui/radio_checked.png" id="5_whj8x"]
 [ext_resource type="Texture2D" uid="uid://daj56yk5lla74" path="res://images/ui/radio_unchecked.png" id="6_fbsbc"]
 [ext_resource type="Texture2D" uid="uid://y2muxve7cisl" path="res://images/ui/option_arrow.png" id="7_vaxcj"]
+[ext_resource type="FontFile" uid="uid://j5gomqfo3au6" path="res://fonts/Varnished.ttf" id="8_c1k8u"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8t278"]
 texture = ExtResource("2_g15qj")
@@ -71,6 +72,13 @@ texture_margin_top = 4.0
 texture_margin_right = 4.0
 texture_margin_bottom = 4.0
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hn21c"]
+texture = ExtResource("2_g15qj")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lkoky"]
 texture = ExtResource("2_xrbtt")
 texture_margin_left = 4.0
@@ -104,8 +112,13 @@ MenuButton/styles/hover = SubResource("StyleBoxTexture_n4pr6")
 MenuButton/styles/normal = SubResource("StyleBoxTexture_mb8d1")
 MenuButton/styles/pressed = SubResource("StyleBoxTexture_natj5")
 OptionButton/icons/arrow = ExtResource("7_vaxcj")
-PopupMenu/fonts/font = ExtResource("1_k2i5g")
+PopupMenu/font_sizes/font_size = 8
+PopupMenu/fonts/font = ExtResource("8_c1k8u")
 PopupMenu/fonts/font_separator = ExtResource("1_k2i5g")
 PopupMenu/fonts/title_font = ExtResource("1_k2i5g")
+PopupMenu/icons/radio_checked = ExtResource("5_whj8x")
+PopupMenu/icons/radio_checked_disabled = ExtResource("6_fbsbc")
+PopupMenu/icons/radio_unchecked = ExtResource("6_fbsbc")
+PopupMenu/styles/panel = SubResource("StyleBoxTexture_hn21c")
 ProgressBar/styles/background = SubResource("StyleBoxTexture_lkoky")
 ProgressBar/styles/fill = SubResource("StyleBoxTexture_bivyg")

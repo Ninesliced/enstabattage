@@ -8,3 +8,6 @@ func set_rank(rank: int):
 
 func set_score(score: int):
 	%Score.text = str(score)
+
+func set_list(list: String):
+	%List.text = list

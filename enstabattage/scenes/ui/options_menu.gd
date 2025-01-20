@@ -8,3 +8,7 @@ func _on_back_pressed():
 
 func _on_change_name_pressed():
 	Global.menu_manager.set_menu("ChangeNameMenu")
+
+
+func _on_change_list_pressed():
+	Global.menu_manager.set_menu("ChangeListMenu")

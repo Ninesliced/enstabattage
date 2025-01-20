@@ -23,26 +23,14 @@ var submit_score_http = HTTPRequest.new()
 var set_name_http = HTTPRequest.new()
 var get_name_http = HTTPRequest.new()
 
+var username = ""
+var team = ""
+
 func _ready():
 	process_mode = PROCESS_MODE_ALWAYS
 
 func _process(_delta):
 	pass
-	# if(Input.is_action_just_pressed("ui_up")):
-	# 	score += 1
-	# 	print("CurrentScore:"+str(score))
-	
-	# if(Input.is_action_just_pressed("ui_down")):
-	# 	score -= 1
-	# 	print("CurrentScore:"+str(score))
-	
-	# Upload score when pressing enter
-	# if(Input.is_action_just_pressed("ui_accept")):
-	# 	get_player_name()
-	
-	# Get score when pressing spacebar
-	# if(Input.is_action_just_pressed("ui_select")):
-	# 	change_player_name("test")
 
 
 func authenticate():
@@ -78,7 +66,7 @@ func authenticate():
 	auth_http.request_completed.connect(_on_authentication_request_completed)
 	auth_http.request("https://api.lootlocker.io/game/v2/session/guest", headers, HTTPClient.METHOD_POST, JSON.stringify(data))
 
-	print("authenticate: Sending ", data)
+	print("authenticate: Sending ", data, "\n")
 
 
 func _on_authentication_request_completed(_result, _response_code, _headers, body):
@@ -88,7 +76,7 @@ func _on_authentication_request_completed(_result, _response_code, _headers, bod
 	var data = json.get_data()
 	
 	# Print server response
-	print(data)
+	print(data, "\n")
 
 	if not data["success"]:
 		print("ERROR: ", data["error"])
@@ -108,6 +96,30 @@ func _on_authentication_request_completed(_result, _response_code, _headers, bod
 	# Get leaderboards
 	authenticated.emit(data)
 
+	var full_name = data["player_name"]
+	var public_uid = data["public_uid"]
+	_init_full_name(full_name, str(public_uid), "ENST'Anonyme")
+
+
+func _get_full_name(full_name: String, fallback_username: String, fallback_team: String):
+	if not full_name or full_name.length() == 0:
+		return [fallback_username, fallback_team]
+
+	var re = RegEx.new()
+	re.compile("^(?<username>[A-Za-zÀ-ÖØ-öø-ÿ0-9_-]+)@(?<team>[\\w'\\ ]+)$")
+	var result: RegExMatch = re.search(full_name)
+	if not result:
+		print("[Leaderboard] ERROR: invalid fullname ({0})".format(full_name))
+		return [full_name, fallback_team]
+
+	return [result.get_string("username"), result.get_string("team")]
+
+
+func _init_full_name(full_name: String, fallback_username: String, fallback_team: String):
+	var t = _get_full_name(full_name, fallback_username, fallback_team)
+	username = t[0]
+	team = t[1]
+
 
 func get_leaderboards():
 	print("Getting leaderboards")
@@ -121,6 +133,7 @@ func get_leaderboards():
 	
 	# Send request
 	leaderboard_http.request(url, headers, HTTPClient.METHOD_GET, "")
+
 
 func _on_leaderboard_request_completed(_result, _response_code, _headers, body):
 	var json = JSON.new()
@@ -182,7 +195,17 @@ func is_name_valid(new_name: String):
 	return true
 
 
-func change_player_name(new_name: String):
+func change_player_username(new_name: String):
+	var new_fullname = "{0}@{1}".format([new_name, team])
+	_change_player_name(new_fullname)
+
+
+func change_player_team(new_team: String):
+	var new_fullname = "{0}@{1}".format([username, new_team])
+	_change_player_name(new_fullname)
+
+
+func _change_player_name(new_name: String):
 	print("Changing player name")
 	
 	var data = { "name": str(new_name) }
@@ -195,6 +218,7 @@ func change_player_name(new_name: String):
 	set_name_http.request_completed.connect(_on_player_set_name_request_completed)
 	# Send request
 	set_name_http.request(url, headers, HTTPClient.METHOD_PATCH, JSON.stringify(data))
+
 
 func _on_player_set_name_request_completed(_result, _response_code, _headers, body):
 	var json = JSON.new()

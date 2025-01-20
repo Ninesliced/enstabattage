@@ -30,9 +30,12 @@ func _load_leaderboards_from_data(data):
 	
 	for item in data.items:
 		var player_name: String = item.player.name
-		if player_name.length() == 0:
-			player_name = str(item.player.public_uid)
+		var list: String = "???"
 		
+		var full_name = Leaderboard._get_full_name(player_name, str(item.player.public_uid), "???")
+		player_name = full_name[0]
+		list = full_name[1]
+
 		var rank = item.rank
 		var score = item.score
 
@@ -40,6 +43,7 @@ func _load_leaderboards_from_data(data):
 		leaderboard_item.set_player_name(player_name)
 		leaderboard_item.set_rank(rank)
 		leaderboard_item.set_score(score)
+		leaderboard_item.set_list(list)
 
 		%Scores.add_child(leaderboard_item)
 
