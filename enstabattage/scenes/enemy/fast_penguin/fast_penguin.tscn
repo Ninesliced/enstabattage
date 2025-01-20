@@ -28,6 +28,8 @@ animations = [{
 
 [node name="Penguin" instance=ExtResource("1_wb8f0")]
 script = ExtResource("2_hqtla")
+damage = 12
+money_on_death = 20
 max_life = 30
 
 [node name="Sprite2D" parent="." index="0"]

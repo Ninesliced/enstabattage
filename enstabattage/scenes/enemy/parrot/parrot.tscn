@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://ghml8wjiunej"]
+
+[ext_resource type="PackedScene" uid="uid://dim0u7u0ttvx7" path="res://scenes/enemy/penguin/penguin.tscn" id="1_5hxle"]
+[ext_resource type="Script" path="res://scenes/enemy/parrot/parrot.gd" id="2_4ra7c"]
+[ext_resource type="Texture2D" uid="uid://bvk8txcujkh5u" path="res://images/parrot.png" id="2_08p00"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x8dyu"]
+atlas = ExtResource("2_08p00")
+region = Rect2(0, 0, 27, 27)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fm5g4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x8dyu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Parrot" instance=ExtResource("1_5hxle")]
+script = ExtResource("2_4ra7c")
+damage = 33
+money_on_death = 250
+max_life = 500
+
+[node name="Sprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_fm5g4")
+frame_progress = 0.0
+
+[node name="LifeDisplay" parent="." index="1"]
+visible = true
