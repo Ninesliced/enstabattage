@@ -10,5 +10,5 @@ func _on_continue_pressed():
 			%ErrorInfo.text = "Nom invalide. Utilisez des lettres, chiffres et tirets."
 		return
 
-	Leaderboard._change_player_name(text)
-	Global.restart()
+	Leaderboard.change_player_username(text)
+	Global.menu_manager.set_menu("SetListMenu")
