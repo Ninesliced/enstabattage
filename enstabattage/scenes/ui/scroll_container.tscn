@@ -37,25 +37,27 @@ size_flags_horizontal = 3
 [node name="Touch1" parent="VBoxContainer" instance=ExtResource("2_f43xo")]
 layout_mode = 2
 touch_texture = ExtResource("4_1ggd5")
-price_list = [20, 100, 300, 500, 1000]
-damage_list = [2, 4, 7, 15, 30]
+price_list = [20, 100, 300, 500, 1000, 5000]
+damage_list = [2, 7, 15, 30, 50, 100]
 is_unlocked = true
 
 [node name="Touch2" parent="VBoxContainer" instance=ExtResource("2_f43xo")]
 layout_mode = 2
 touch_path = "res://scenes/touch_manager/shot_touch/shot_touch.tscn"
-price_list = [50, 150, 400, 700, 900]
+price_list = [150, 300, 600, 900, 1500]
+damage_list = [1.0, 2.0, 4.0, 8.0, 16.0]
 unlock_price = 100
 
 [node name="Touch3" parent="VBoxContainer" instance=ExtResource("2_f43xo")]
 layout_mode = 2
 touch_path = "res://scenes/touch_manager/mini_touch/mini_touch.tscn"
 price_list = [250, 500, 1000, 1500, 2000]
-damage_list = [0.34, 1, 2, 4, 6]
+damage_list = [0.34, 1, 2, 4, 8]
 unlock_price = 500
 
 [node name="Touch4" parent="VBoxContainer" instance=ExtResource("2_f43xo")]
 layout_mode = 2
 touch_path = "res://scenes/touch_manager/big_shot_touch/big_shot_touch.tscn"
 price_list = [250, 350, 450, 550, 650]
+damage_list = [2.0, 4.0, 6.0, 9.0, 14.0]
 unlock_price = 250

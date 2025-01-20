@@ -444,5 +444,258 @@ maximum_delay = 0.1
 time_before_spawning_start = 8.3
 spawn_duration = 1.0
 
+[node name="boss" type="Node2D" parent="SpawnerManager"]
+script = ExtResource("10_ofqkf")
+round_time = 6
+
+[node name="Spawner" parent="SpawnerManager/boss" instance=ExtResource("1_igtxp")]
+entity_path = "res://scenes/enemy/parrot/parrot.tscn"
+maximum_angle = 2.26893
+x_pos = 60.5
+minimum_velocity = 7
+maximum_velocity = 7
+minimum_delay = 100.0
+maximum_delay = 100.0
+time_before_spawning_start = 0.5
+
+[node name="Round13" type="Node2D" parent="SpawnerManager"]
+script = ExtResource("10_ofqkf")
+round_time = 20
+
+[node name="Spawner" parent="SpawnerManager/Round13" instance=ExtResource("1_igtxp")]
+entity_path = "res://scenes/enemy/penguin/penguin.tscn"
+maximum_angle = 2.26893
+x_pos = 64.0
+minimum_velocity = 20
+maximum_velocity = 30
+maximum_delay = 0.5
+time_before_spawning_start = 0.3
+spawn_duration = 15.0
+
+[node name="Spawner2" parent="SpawnerManager/Round13" instance=ExtResource("1_igtxp")]
+entity_path = "res://scenes/enemy/penguin/penguin.tscn"
+maximum_angle = 2.26893
+x_pos = 39.0
+minimum_velocity = 20
+maximum_velocity = 30
+time_before_spawning_start = 0.1
+spawn_duration = 15.0
+
+[node name="Spawner3" parent="SpawnerManager/Round13" instance=ExtResource("1_igtxp")]
+entity_path = "res://scenes/enemy/penguin/penguin.tscn"
+maximum_angle = 2.26893
+x_pos = 88.5
+minimum_velocity = 20
+maximum_velocity = 30
+time_before_spawning_start = 0.6
+spawn_duration = 15.0
+
+[node name="Round14" type="Node2D" parent="SpawnerManager"]
+script = ExtResource("10_ofqkf")
+round_time = 20
+
+[node name="Spawner" parent="SpawnerManager/Round14" instance=ExtResource("1_igtxp")]
+entity_path = "res://scenes/enemy/fast_penguin/fast_penguin.tscn"
+maximum_angle = 2.26893
+x_pos = 38.1
+minimum_velocity = 40
+maximum_velocity = 50
+minimum_delay = 8.0
+maximum_delay = 8.0
+time_before_spawning_start = 0.1
+spawn_duration = 15.0
+
+[node name="Spawner2" parent="SpawnerManager/Round14" instance=ExtResource("1_igtxp")]
+entity_path = "res://scenes/enemy/fast_penguin/fast_penguin.tscn"
+maximum_angle = 2.26893
+x_pos = 89.9
+minimum_velocity = 40
+maximum_velocity = 50
+minimum_delay = 8.0
+maximum_delay = 8.0
+time_before_spawning_start = 4.0
+spawn_duration = 15.0
+
+[node name="Round15" type="Node2D" parent="SpawnerManager"]
+script = ExtResource("10_ofqkf")
+round_time = 20
+
+[node name="Spawner" parent="SpawnerManager/Round15" instance=ExtResource("1_igtxp")]
+entity_path = "res://scenes/enemy/fast_penguin/fast_penguin.tscn"
+maximum_angle = 2.26893
+x_pos = 64.0
+minimum_velocity = 40
+maximum_velocity = 50
+minimum_delay = 4.0
+maximum_delay = 4.0
+time_before_spawning_start = 0.1
+spawn_duration = 15.0
+
+[node name="Spawner2" parent="SpawnerManager/Round15" instance=ExtResource("1_igtxp")]
+entity_path = "res://scenes/enemy/fast_penguin/fast_penguin.tscn"
+maximum_angle = 2.26893
+x_pos = 64.0
+minimum_velocity = 40
+maximum_velocity = 50
+minimum_delay = 4.0
+maximum_delay = 4.0
+time_before_spawning_start = 2.0
+spawn_duration = 15.0
+
+[node name="Spawner3" parent="SpawnerManager/Round15" instance=ExtResource("1_igtxp")]
+entity_path = "res://scenes/enemy/penguin/penguin.tscn"
+maximum_angle = 2.26893
+x_pos = 60.5
+minimum_velocity = 20
+maximum_velocity = 30
+minimum_delay = 0.1
+maximum_delay = 0.1
+time_before_spawning_start = 0.5
+
+[node name="Round16" type="Node2D" parent="SpawnerManager"]
+script = ExtResource("10_ofqkf")
+round_time = 20
+
+[node name="Spawner" parent="SpawnerManager/Round16" instance=ExtResource("1_igtxp")]
+entity_path = "res://scenes/enemy/fast_penguin/fast_penguin.tscn"
+maximum_angle = 2.26893
+x_pos = 64.0
+minimum_velocity = 40
+maximum_velocity = 50
+minimum_delay = 4.0
+maximum_delay = 4.0
+time_before_spawning_start = 0.3
+spawn_duration = 15.0
+
+[node name="Spawner3" parent="SpawnerManager/Round16" instance=ExtResource("1_igtxp")]
+entity_path = "res://scenes/enemy/penguin/penguin.tscn"
+spawn_radius = 30.0
+maximum_angle = 2.26893
+x_pos = 88.5
+minimum_velocity = 40
+maximum_velocity = 50
+minimum_delay = 0.1
+maximum_delay = 0.1
+time_before_spawning_start = 0.3
+spawn_duration = 1.0
+
+[node name="Spawner4" parent="SpawnerManager/Round16" instance=ExtResource("1_igtxp")]
+entity_path = "res://scenes/enemy/penguin/penguin.tscn"
+spawn_radius = 30.0
+maximum_angle = 2.26893
+x_pos = 88.5
+minimum_velocity = 40
+maximum_velocity = 50
+minimum_delay = 0.1
+maximum_delay = 0.1
+time_before_spawning_start = 4.3
+spawn_duration = 1.0
+
+[node name="Spawner5" parent="SpawnerManager/Round16" instance=ExtResource("1_igtxp")]
+entity_path = "res://scenes/enemy/penguin/penguin.tscn"
+spawn_radius = 30.0
+maximum_angle = 2.26893
+x_pos = 88.5
+minimum_velocity = 40
+maximum_velocity = 50
+minimum_delay = 0.1
+maximum_delay = 0.1
+time_before_spawning_start = 8.3
+spawn_duration = 1.0
+
+[node name="Round17" type="Node2D" parent="SpawnerManager"]
+script = ExtResource("10_ofqkf")
+round_time = 20
+
+[node name="Spawner" parent="SpawnerManager/Round17" instance=ExtResource("1_igtxp")]
+entity_path = "res://scenes/enemy/fast_penguin/fast_penguin.tscn"
+maximum_angle = 2.26893
+x_pos = 20.8
+minimum_velocity = 40
+maximum_velocity = 50
+minimum_delay = 2.0
+maximum_delay = 2.0
+time_before_spawning_start = 1.0
+spawn_duration = 15.0
+
+[node name="Spawner2" parent="SpawnerManager/Round17" instance=ExtResource("1_igtxp")]
+entity_path = "res://scenes/enemy/fast_penguin/fast_penguin.tscn"
+maximum_angle = 2.26893
+x_pos = 108.3
+minimum_velocity = 40
+maximum_velocity = 50
+minimum_delay = 2.0
+maximum_delay = 2.0
+time_before_spawning_start = 0.1
+spawn_duration = 15.0
+
+[node name="2boss" type="Node2D" parent="SpawnerManager"]
+script = ExtResource("10_ofqkf")
+round_time = 6
+
+[node name="Spawner" parent="SpawnerManager/2boss" instance=ExtResource("1_igtxp")]
+entity_path = "res://scenes/enemy/parrot/parrot.tscn"
+maximum_angle = 2.26893
+x_pos = 60.5
+minimum_velocity = 7
+maximum_velocity = 7
+minimum_delay = 100.0
+maximum_delay = 100.0
+time_before_spawning_start = 0.5
+
+[node name="Spawner2" parent="SpawnerManager/2boss" instance=ExtResource("1_igtxp")]
+entity_path = "res://scenes/enemy/parrot/parrot.tscn"
+maximum_angle = 2.26893
+x_pos = 60.5
+minimum_velocity = 7
+maximum_velocity = 7
+minimum_delay = 100.0
+maximum_delay = 100.0
+time_before_spawning_start = 0.5
+
+[node name="Spawner3" parent="SpawnerManager/2boss" instance=ExtResource("1_igtxp")]
+entity_path = "res://scenes/enemy/parrot/parrot.tscn"
+maximum_angle = 2.26893
+x_pos = 60.5
+minimum_velocity = 7
+maximum_velocity = 7
+minimum_delay = 100.0
+maximum_delay = 100.0
+time_before_spawning_start = 0.5
+
+[node name="Round12" type="Node2D" parent="SpawnerManager"]
+script = ExtResource("10_ofqkf")
+round_time = 15
+
+[node name="Spawner" parent="SpawnerManager/Round12" instance=ExtResource("1_igtxp")]
+entity_path = "res://scenes/enemy/penguin/penguin.tscn"
+maximum_angle = 2.26893
+x_pos = 60.5
+minimum_velocity = 20
+maximum_velocity = 30
+minimum_delay = 2.0
+maximum_delay = 2.0
+time_before_spawning_start = 0.1
+
+[node name="Spawner2" parent="SpawnerManager/Round12" instance=ExtResource("1_igtxp")]
+entity_path = "res://scenes/enemy/penguin/penguin.tscn"
+maximum_angle = 2.26893
+x_pos = 19.0
+minimum_velocity = 20
+maximum_velocity = 30
+minimum_delay = 2.0
+maximum_delay = 2.0
+time_before_spawning_start = 0.1
+
+[node name="Spawner3" parent="SpawnerManager/Round12" instance=ExtResource("1_igtxp")]
+entity_path = "res://scenes/enemy/penguin/penguin.tscn"
+maximum_angle = 2.26893
+x_pos = 105.9
+minimum_velocity = 20
+maximum_velocity = 30
+minimum_delay = 2.0
+maximum_delay = 2.0
+time_before_spawning_start = 0.1
+
 [connection signal="pressed" from="CanvasLayer/Hud/SkipToNextRound" to="SpawnerManager" method="_on_skip_to_next_round_pressed"]
 [connection signal="timeout" from="SpawnerManager/NextRoundTimer" to="SpawnerManager" method="_on_next_round_timer_timeout"]

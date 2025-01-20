@@ -17,4 +17,3 @@ func _on_leaderboards_pressed():
 
 func _on_options_pressed():
 	Global.menu_manager.set_menu("OptionsMenu")
-
