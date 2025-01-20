@@ -3,5 +3,5 @@
 [ext_resource type="PackedScene" uid="uid://dwbbquq1cd2iy" path="res://scenes/touch_manager/normal_touch/normal_touch.tscn" id="1_rekts"]
 
 [node name="NormalTouch" instance=ExtResource("1_rekts")]
-coodown_time = 0.8
+coodown_time = 0.02
 is_auto = true
