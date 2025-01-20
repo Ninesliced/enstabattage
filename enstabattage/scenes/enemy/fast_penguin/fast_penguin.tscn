@@ -26,7 +26,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Penguin" instance=ExtResource("1_wb8f0")]
+[node name="Penguin2" instance=ExtResource("1_wb8f0")]
 script = ExtResource("2_hqtla")
 damage = 12
 money_on_death = 20
