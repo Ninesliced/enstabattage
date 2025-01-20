@@ -24,7 +24,7 @@ var set_name_http = HTTPRequest.new()
 var get_name_http = HTTPRequest.new()
 
 var username = ""
-var team = ""
+var team = "NoTeam"
 
 func _ready():
 	process_mode = PROCESS_MODE_ALWAYS
@@ -98,7 +98,7 @@ func _on_authentication_request_completed(_result, _response_code, _headers, bod
 
 	var full_name = data["player_name"]
 	var public_uid = data["public_uid"]
-	_init_full_name(full_name, str(public_uid), "ENST'Anonyme")
+	_init_full_name(full_name, str(public_uid), "NoTeam")
 
 
 func _get_full_name(full_name: String, fallback_username: String, fallback_team: String):
@@ -196,17 +196,23 @@ func is_name_valid(new_name: String):
 
 
 func change_player_username(new_name: String):
+	username = new_name
 	var new_fullname = "{0}@{1}".format([new_name, team])
 	_change_player_name(new_fullname)
 
 
 func change_player_team(new_team: String):
+	team = new_team
 	var new_fullname = "{0}@{1}".format([username, new_team])
 	_change_player_name(new_fullname)
 
 
+func reset_name():
+	_change_player_name("")
+
+
 func _change_player_name(new_name: String):
-	print("Changing player name")
+	print("Changing player name to ", new_name)
 	
 	var data = { "name": str(new_name) }
 	var url =  "https://api.lootlocker.io/game/player/name"

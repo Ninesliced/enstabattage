@@ -32,23 +32,19 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
-[node name="Items" type="VBoxContainer" parent="MarginContainer/ScrollContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ScrollContainer/Items"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Back" type="Button" parent="MarginContainer/ScrollContainer/Items/HBoxContainer"]
+[node name="Back" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 icon = ExtResource("3_boy81")
 
-[node name="Label" type="Label" parent="MarginContainer/ScrollContainer/Items/HBoxContainer"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(24, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -59,9 +55,18 @@ label_settings = SubResource("LabelSettings_mivrs")
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Scores" type="VBoxContainer" parent="MarginContainer/ScrollContainer/Items"]
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_fmjkk")
+
+[node name="Items" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Scores" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainer/Items"]
 unique_name_in_owner = true
 layout_mode = 2
 
 [connection signal="menu_set" from="." to="." method="_on_menu_set"]
-[connection signal="pressed" from="MarginContainer/ScrollContainer/Items/HBoxContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Back" to="." method="_on_back_pressed"]

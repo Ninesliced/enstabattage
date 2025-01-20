@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cm6ki522wkpwr"]
+[gd_scene load_steps=4 format=3 uid="uid://cs0xyqkkc7kcj"]
 
 [ext_resource type="Theme" uid="uid://bjgel0idhd2yw" path="res://themes/main_theme.tres" id="1_atsv6"]
 [ext_resource type="Script" path="res://scenes/ui/autheticating_menu.gd" id="2_oau2f"]
+[ext_resource type="FontFile" uid="uid://j5gomqfo3au6" path="res://fonts/Varnished.ttf" id="3_b1osn"]
 
 [node name="AutheticatingMenu" type="Control"]
 layout_mode = 3
@@ -26,8 +27,20 @@ theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
 [node name="Label" type="Label" parent="MarginContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Connexion..."
 horizontal_alignment = 1
 
+[node name="PlayOffline" type="Button" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("3_b1osn")
+theme_override_font_sizes/font_size = 8
+text = "Jouer hors ligne"
+
+[node name="DotTimer" type="Timer" parent="."]
+autostart = true
+
 [connection signal="menu_set" from="." to="." method="_on_menu_set"]
+[connection signal="pressed" from="MarginContainer/PlayOffline" to="." method="_on_play_offline_pressed"]

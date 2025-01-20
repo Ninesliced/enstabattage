@@ -29,22 +29,8 @@ func _load_leaderboards_from_data(data):
 		return false
 	
 	for item in data.items:
-		var player_name: String = item.player.name
-		var list: String = "???"
-		
-		var full_name = Leaderboard._get_full_name(player_name, str(item.player.public_uid), "???")
-		player_name = full_name[0]
-		list = full_name[1]
-
-		var rank = item.rank
-		var score = item.score
-
 		var leaderboard_item = leaderboard_item_scene.instantiate()
-		leaderboard_item.set_player_name(player_name)
-		leaderboard_item.set_rank(rank)
-		leaderboard_item.set_score(score)
-		leaderboard_item.set_list(list)
-
+		leaderboard_item.parse_data(item)
 		%Scores.add_child(leaderboard_item)
 
 

@@ -21,7 +21,6 @@ func _process(delta: float) -> void:
 	sprite.flip_h = velocity.x > 0
 	update_life_display()
 
-func _physics_process(delta: float) -> void:
 	move_and_slide()
 	if life <= 0:
 		die()

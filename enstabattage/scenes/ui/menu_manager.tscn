@@ -1,15 +1,16 @@
-[gd_scene load_steps=13 format=3 uid="uid://bb432u67ug6vb"]
+[gd_scene load_steps=14 format=3 uid="uid://bb432u67ug6vb"]
 
 [ext_resource type="Script" path="res://scenes/ui/menu_manager.gd" id="1_nqwof"]
 [ext_resource type="Shader" path="res://shaders/pause_menu_background.gdshader" id="2_3rcm0"]
-[ext_resource type="PackedScene" uid="uid://do8r685uon1sl" path="res://scenes/ui/pause_menu.tscn" id="2_fa61x"]
+[ext_resource type="PackedScene" uid="uid://dhmh23lj2uxf" path="res://scenes/ui/pause_menu.tscn" id="2_fa61x"]
 [ext_resource type="PackedScene" uid="uid://briwxjft3njhs" path="res://scenes/ui/game_over_menu.tscn" id="4_5mkst"]
 [ext_resource type="PackedScene" uid="uid://bo8bd6v8tthtl" path="res://scenes/ui/set_name_menu.tscn" id="5_1c62n"]
-[ext_resource type="PackedScene" uid="uid://cm6ki522wkpwr" path="res://scenes/ui/autheticating_menu.tscn" id="6_as87d"]
+[ext_resource type="PackedScene" uid="uid://cs0xyqkkc7kcj" path="res://scenes/ui/autheticating_menu.tscn" id="6_as87d"]
 [ext_resource type="PackedScene" uid="uid://bmeahgw8mxa5v" path="res://scenes/ui/leaderboard_menu.tscn" id="7_fi3e8"]
-[ext_resource type="PackedScene" uid="uid://cbvqj3rxx5gj6" path="res://scenes/ui/options_menu.tscn" id="8_7ke7t"]
-[ext_resource type="PackedScene" path="res://scenes/ui/change_name_menu.tscn" id="9_xnge3"]
-[ext_resource type="PackedScene" path="res://scenes/ui/change_list_menu.tscn" id="10_r51q5"]
+[ext_resource type="PackedScene" uid="uid://bi0w4u3vdcp5i" path="res://scenes/ui/options_menu.tscn" id="8_7ke7t"]
+[ext_resource type="PackedScene" uid="uid://8mb8neo3nth1" path="res://scenes/ui/change_name_menu.tscn" id="9_xnge3"]
+[ext_resource type="PackedScene" uid="uid://dttxnro2bbfwv" path="res://scenes/ui/change_list_menu.tscn" id="10_r51q5"]
+[ext_resource type="PackedScene" uid="uid://b3b04oeu6g6m5" path="res://scenes/ui/set_list_menu.tscn" id="11_andxq"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_bms1h"]
 random_pitch = 1.1
@@ -87,6 +88,9 @@ layout_mode = 1
 layout_mode = 1
 
 [node name="ChangeNameMenu" parent="Menus" instance=ExtResource("9_xnge3")]
+layout_mode = 1
+
+[node name="SetListMenu" parent="Menus" instance=ExtResource("11_andxq")]
 layout_mode = 1
 
 [node name="ChangeListMenu" parent="Menus" instance=ExtResource("10_r51q5")]

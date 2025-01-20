@@ -5,7 +5,6 @@ func _ready():
 	Leaderboard.player_get_name_completed.connect(_on_player_get_name_completed)
 
 func _on_menu_set():
-	%Username.text = ""
 	Leaderboard.get_player_name()
 
 func _on_player_get_name_completed(name):

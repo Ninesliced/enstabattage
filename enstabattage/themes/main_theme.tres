@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=25 format=3 uid="uid://bjgel0idhd2yw"]
+[gd_resource type="Theme" load_steps=35 format=3 uid="uid://bjgel0idhd2yw"]
 
 [ext_resource type="FontFile" uid="uid://bm7ei8ouuwcd4" path="res://fonts/Awe Mono Gold.ttf" id="1_k2i5g"]
 [ext_resource type="Texture2D" uid="uid://dq6x2ep6jtsdq" path="res://images/ui/button_pressed.png" id="2_g15qj"]
@@ -9,6 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://daj56yk5lla74" path="res://images/ui/radio_unchecked.png" id="6_fbsbc"]
 [ext_resource type="Texture2D" uid="uid://y2muxve7cisl" path="res://images/ui/option_arrow.png" id="7_vaxcj"]
 [ext_resource type="FontFile" uid="uid://j5gomqfo3au6" path="res://fonts/Varnished.ttf" id="8_c1k8u"]
+[ext_resource type="Texture2D" uid="uid://dpnamrdtb2wiq" path="res://images/ui/scrollbar.png" id="10_g3elo"]
+[ext_resource type="Texture2D" uid="uid://dwpsgus1gcoou" path="res://images/ui/grabber_normal.png" id="10_hk2n3"]
+[ext_resource type="Texture2D" uid="uid://dcwmden312vtf" path="res://images/ui/grabber_hover.png" id="11_xajv8"]
+[ext_resource type="Texture2D" uid="uid://giuakb32ap4" path="res://images/ui/grabber_pressed.png" id="12_cjbit"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8t278"]
 texture = ExtResource("2_g15qj")
@@ -43,6 +47,13 @@ texture_margin_right = 4.0
 texture_margin_bottom = 4.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1a6ov"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n1soj"]
+texture = ExtResource("2_g15qj")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4upk3"]
 
@@ -91,6 +102,34 @@ texture_margin_left = 4.0
 texture_margin_right = 4.0
 region_rect = Rect2(-1, 0, 12, 7)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tf3rh"]
+texture = ExtResource("10_hk2n3")
+texture_margin_top = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hkvb4"]
+texture = ExtResource("11_xajv8")
+texture_margin_top = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(0, 0, 4, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wc0gn"]
+texture = ExtResource("12_cjbit")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_od01r"]
+texture = ExtResource("10_g3elo")
+texture_margin_top = 3.0
+texture_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lu7r5"]
+texture = ExtResource("10_g3elo")
+texture_margin_top = 3.0
+texture_margin_bottom = 3.0
+
 [resource]
 Button/fonts/font = ExtResource("1_k2i5g")
 Button/styles/disabled = SubResource("StyleBoxTexture_8t278")
@@ -103,6 +142,7 @@ CheckBox/icons/radio_checked_disabled = ExtResource("6_fbsbc")
 Label/fonts/font = ExtResource("1_k2i5g")
 LineEdit/fonts/font = ExtResource("1_k2i5g")
 LineEdit/styles/focus = SubResource("StyleBoxEmpty_1a6ov")
+LineEdit/styles/normal = SubResource("StyleBoxTexture_n1soj")
 MenuBar/fonts/font = ExtResource("1_k2i5g")
 MenuBar/styles/normal = SubResource("StyleBoxTexture_4upk3")
 MenuButton/fonts/font = ExtResource("1_k2i5g")
@@ -122,3 +162,8 @@ PopupMenu/icons/radio_unchecked = ExtResource("6_fbsbc")
 PopupMenu/styles/panel = SubResource("StyleBoxTexture_hn21c")
 ProgressBar/styles/background = SubResource("StyleBoxTexture_lkoky")
 ProgressBar/styles/fill = SubResource("StyleBoxTexture_bivyg")
+VScrollBar/styles/grabber = SubResource("StyleBoxTexture_tf3rh")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxTexture_hkvb4")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxTexture_wc0gn")
+VScrollBar/styles/scroll = SubResource("StyleBoxTexture_od01r")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxTexture_lu7r5")

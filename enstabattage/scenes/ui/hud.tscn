@@ -52,6 +52,7 @@ text = "123"
 label_settings = SubResource("LabelSettings_wgxct")
 
 [node name="ScrollContainer" parent="." instance=ExtResource("4_wihnb")]
+custom_minimum_size = Vector2(2, 4)
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5

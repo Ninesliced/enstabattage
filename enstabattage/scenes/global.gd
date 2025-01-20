@@ -8,6 +8,8 @@ var difficulty = 1
 var is_authticated = false
 
 func _ready() -> void:
+	print("====[ ENST'Abattage ]====")
+
 	process_mode = PROCESS_MODE_ALWAYS
 	
 	menu_manager = menu_manager_file.instantiate()
