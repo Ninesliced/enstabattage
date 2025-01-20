@@ -46,6 +46,10 @@ size_flags_vertical = 0
 theme = ExtResource("1_x234t")
 text = "Score: "
 
+[node name="Leaderboards" type="Button" parent="MarginContainer/Buttons"]
+layout_mode = 2
+text = "Classements"
+
 [node name="Retry" type="Button" parent="MarginContainer/Buttons"]
 layout_mode = 2
 text = "Réessayer"
@@ -60,5 +64,6 @@ layout_mode = 2
 icon = ExtResource("3_dq6u5")
 
 [connection signal="menu_set" from="." to="." method="_on_menu_set"]
+[connection signal="pressed" from="MarginContainer/Buttons/Leaderboards" to="." method="_on_leaderboards_pressed"]
 [connection signal="pressed" from="MarginContainer/Buttons/Retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="MarginContainer/Links/Insta" to="." method="_on_insta_pressed"]
