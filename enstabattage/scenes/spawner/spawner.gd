@@ -32,9 +32,10 @@ func _spawn_entity():
 	var pos = Vector2(rng.randf_range(0, spawn_radius), 0).rotated(rng.randf_range(0, TAU))
 	var angle = rng.randf_range(minimum_angle, maximum_angle)
 	var vel = rng.randf_range(minimum_velocity, maximum_velocity)
-	print(pos)
+	print(entity.name)
 	entity.global_position = pos + position
 	entity.max_life *= Global.difficulty
+	entity.money_on_death *= Global.difficulty
 	entity.velocity = Vector2(vel, 0).rotated(angle)
 	get_parent().add_child(entity)
 

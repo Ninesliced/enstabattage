@@ -28,7 +28,11 @@ func _on_died() -> void:
 func _on_hurt_box_body_entered(body:Node2D):
 	if body is LivingEntity and body.is_enemy != is_enemy:
 		body.deal_damage(self, damage)
-		deal_knockback(Vector2(rng.randf_range(-1, 1), -1).normalized(), 50)
+		var strength = 1
+		if body is Tower:
+			strength = knockback_resistance
+
+		deal_knockback(Vector2(rng.randf_range(-1, 1), -1).normalized(), 50 * strength)
 
 func flash_white():
 	var tween: Tween = create_tween()
