@@ -1,0 +1,117 @@
+[gd_scene load_steps=9 format=3 uid="uid://8mb8neo3nth1"]
+
+[ext_resource type="Theme" uid="uid://bjgel0idhd2yw" path="res://themes/main_theme.tres" id="1_qvyw4"]
+[ext_resource type="Script" path="res://scenes/ui/change_name_menu.gd" id="2_fqa5n"]
+[ext_resource type="FontFile" uid="uid://j5gomqfo3au6" path="res://fonts/Varnished.ttf" id="3_6jekj"]
+[ext_resource type="Texture2D" uid="uid://bv4ioko8spwbb" path="res://images/ui/back.png" id="3_jxawf"]
+[ext_resource type="FontFile" uid="uid://bm7ei8ouuwcd4" path="res://fonts/Awe Mono Gold.ttf" id="4_26i4w"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_61pei"]
+font = ExtResource("4_26i4w")
+shadow_size = 0
+shadow_color = Color(0.0910933, 0.0832, 0.32, 0.513726)
+
+[sub_resource type="LabelSettings" id="LabelSettings_wdbgj"]
+font_size = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_17jy0"]
+font_size = 8
+font_color = Color(1, 0.598667, 0.57, 1)
+shadow_size = 0
+shadow_color = Color(0, 0, 0, 0.478431)
+
+[node name="ChangeNameMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_qvyw4")
+script = ExtResource("2_fqa5n")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Items" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/Items"]
+layout_mode = 2
+
+[node name="Back" type="Button" parent="MarginContainer/Items/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+icon = ExtResource("3_jxawf")
+
+[node name="Label" type="Label" parent="MarginContainer/Items/HBoxContainer2"]
+custom_minimum_size = Vector2(24, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme = ExtResource("1_qvyw4")
+text = "Modifier nom"
+label_settings = SubResource("LabelSettings_61pei")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="LabelInfo" type="Label" parent="MarginContainer/Items"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("3_6jekj")
+text = "9 characteres max"
+label_settings = SubResource("LabelSettings_wdbgj")
+horizontal_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="MarginContainer/Items"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_qvyw4")
+alignment = 1
+max_length = 9
+context_menu_enabled = false
+caret_blink = true
+
+[node name="OptionButton" type="OptionButton" parent="MarginContainer/Items"]
+layout_mode = 2
+theme = ExtResource("1_qvyw4")
+selected = 0
+fit_to_longest_item = false
+allow_reselect = true
+item_count = 5
+popup/item_0/text = "Choisir liste"
+popup/item_0/id = 4
+popup/item_1/text = "ENST'Avenvers"
+popup/item_2/text = "ENST'Abricots"
+popup/item_2/id = 1
+popup/item_3/text = "ENST'Asticots"
+popup/item_3/id = 2
+popup/item_4/text = "ENST'Albert"
+popup/item_4/id = 3
+
+[node name="ErrorInfo" type="Label" parent="MarginContainer/Items"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_6jekj")
+label_settings = SubResource("LabelSettings_17jy0")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Continue" type="Button" parent="MarginContainer/Items"]
+layout_mode = 2
+text = "Changer"
+
+[connection signal="pressed" from="MarginContainer/Items/HBoxContainer2/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="MarginContainer/Items/Continue" to="." method="_on_continue_pressed"]

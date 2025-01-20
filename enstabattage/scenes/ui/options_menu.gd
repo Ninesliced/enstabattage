@@ -7,4 +7,4 @@ func _on_back_pressed():
 
 
 func _on_change_name_pressed():
-	Global.menu_manager.set_menu("SetNameMenu")
+	Global.menu_manager.set_menu("ChangeNameMenu")

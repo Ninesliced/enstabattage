@@ -81,8 +81,8 @@ label_settings = SubResource("LabelSettings_wdbgj")
 horizontal_alignment = 1
 
 [connection signal="pressed" from="MarginContainer/Buttons/Continue" to="." method="_on_continue_pressed"]
-[connection signal="pressed" from="MarginContainer/Buttons/Retry" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MarginContainer/Buttons/Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="MarginContainer/Buttons/Retry" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MarginContainer/Buttons/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="MarginContainer/Buttons/Leaderboards" to="." method="_on_leaderboards_pressed"]
 [connection signal="pressed" from="MarginContainer/Footer/Links/Insta" to="." method="_on_insta_pressed"]

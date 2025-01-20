@@ -1,10 +1,13 @@
-[gd_resource type="Theme" load_steps=13 format=3 uid="uid://bjgel0idhd2yw"]
+[gd_resource type="Theme" load_steps=23 format=3 uid="uid://bjgel0idhd2yw"]
 
 [ext_resource type="FontFile" uid="uid://bm7ei8ouuwcd4" path="res://fonts/Awe Mono Gold.ttf" id="1_k2i5g"]
 [ext_resource type="Texture2D" uid="uid://dq6x2ep6jtsdq" path="res://images/ui/button_pressed.png" id="2_g15qj"]
 [ext_resource type="Texture2D" uid="uid://b45p66csxiqmv" path="res://images/ui/button.png" id="2_sn0i8"]
 [ext_resource type="Texture2D" uid="uid://bhe2fxgl4gra2" path="res://images/health_bar.png" id="2_xrbtt"]
 [ext_resource type="Texture2D" uid="uid://do4ny0vj63lfc" path="res://images/ui/button_hover.png" id="3_ttxe5"]
+[ext_resource type="Texture2D" uid="uid://bsab6jqqqvs4x" path="res://images/ui/radio_checked.png" id="5_whj8x"]
+[ext_resource type="Texture2D" uid="uid://daj56yk5lla74" path="res://images/ui/radio_unchecked.png" id="6_fbsbc"]
+[ext_resource type="Texture2D" uid="uid://y2muxve7cisl" path="res://images/ui/option_arrow.png" id="7_vaxcj"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8t278"]
 texture = ExtResource("2_g15qj")
@@ -38,6 +41,36 @@ texture_margin_top = 4.0
 texture_margin_right = 4.0
 texture_margin_bottom = 4.0
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1a6ov"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4upk3"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o7l4w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ua7x8"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n4pr6"]
+texture = ExtResource("3_ttxe5")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(0, 0, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mb8d1"]
+texture = ExtResource("2_sn0i8")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_natj5"]
+texture = ExtResource("2_g15qj")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lkoky"]
 texture = ExtResource("2_xrbtt")
 texture_margin_left = 4.0
@@ -57,7 +90,22 @@ Button/styles/focus = SubResource("StyleBoxEmpty_gnw7l")
 Button/styles/hover = SubResource("StyleBoxTexture_3ag45")
 Button/styles/normal = SubResource("StyleBoxTexture_f7e1i")
 Button/styles/pressed = SubResource("StyleBoxTexture_yfxbo")
+CheckBox/icons/radio_checked = ExtResource("5_whj8x")
+CheckBox/icons/radio_checked_disabled = ExtResource("6_fbsbc")
 Label/fonts/font = ExtResource("1_k2i5g")
 LineEdit/fonts/font = ExtResource("1_k2i5g")
+LineEdit/styles/focus = SubResource("StyleBoxEmpty_1a6ov")
+MenuBar/fonts/font = ExtResource("1_k2i5g")
+MenuBar/styles/normal = SubResource("StyleBoxTexture_4upk3")
+MenuButton/fonts/font = ExtResource("1_k2i5g")
+MenuButton/styles/disabled = SubResource("StyleBoxTexture_o7l4w")
+MenuButton/styles/focus = SubResource("StyleBoxEmpty_ua7x8")
+MenuButton/styles/hover = SubResource("StyleBoxTexture_n4pr6")
+MenuButton/styles/normal = SubResource("StyleBoxTexture_mb8d1")
+MenuButton/styles/pressed = SubResource("StyleBoxTexture_natj5")
+OptionButton/icons/arrow = ExtResource("7_vaxcj")
+PopupMenu/fonts/font = ExtResource("1_k2i5g")
+PopupMenu/fonts/font_separator = ExtResource("1_k2i5g")
+PopupMenu/fonts/title_font = ExtResource("1_k2i5g")
 ProgressBar/styles/background = SubResource("StyleBoxTexture_lkoky")
 ProgressBar/styles/fill = SubResource("StyleBoxTexture_bivyg")
