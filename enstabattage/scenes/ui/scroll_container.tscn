@@ -1,11 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://dtl8x10k160bt"]
+[gd_scene load_steps=10 format=3 uid="uid://dtl8x10k160bt"]
 
 [ext_resource type="Script" path="res://scenes/ui/scroll_container.gd" id="1_dglgy"]
 [ext_resource type="PackedScene" uid="uid://hnc5imee2bml" path="res://scenes/ui/touch_shop_1.tscn" id="2_f43xo"]
 [ext_resource type="Texture2D" uid="uid://6kn6oh0ce0je" path="res://images/touches/touch_normal.png" id="4_1ggd5"]
-[ext_resource type="Texture2D" uid="uid://ebub8ieepf0a" path="res://images/touches/touch_shot.png" id="4_vyutj"]
-[ext_resource type="Texture2D" uid="uid://b1webges54jq2" path="res://images/touches/touch_mini.png" id="5_pr44l"]
-[ext_resource type="Texture2D" uid="uid://pmdqocwrheyi" path="res://images/touches/touch_shrapnel.png" id="6_fbjns"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ec27d"]
 
@@ -25,6 +22,7 @@ VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_77uv3")
 VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_ywa1f")
 
 [node name="ScrollContainer" type="ScrollContainer"]
+custom_minimum_size = Vector2(1.685, 3.835)
 offset_left = 3.0
 offset_top = 2.0
 offset_right = 132.0
@@ -35,35 +33,31 @@ script = ExtResource("1_dglgy")
 [node name="VBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
-alignment = 1
 
 [node name="Touch1" parent="VBoxContainer" instance=ExtResource("2_f43xo")]
 layout_mode = 2
 touch_texture = ExtResource("4_1ggd5")
-price_list = [20, 100, 300, 500, 1000, 5000]
-damage_list = [2, 7, 15, 30, 50, 100]
+price_list = [20, 200, 600, 1700, 1600, 5000]
+damage_list = [2, 6, 12, 24, 50, 100]
 is_unlocked = true
 
 [node name="Touch2" parent="VBoxContainer" instance=ExtResource("2_f43xo")]
 layout_mode = 2
 touch_path = "res://scenes/touch_manager/shot_touch/shot_touch.tscn"
-touch_texture = ExtResource("4_vyutj")
-price_list = [150, 300, 600, 900, 1500]
+price_list = [150, 300, 700, 1400, 30000]
 damage_list = [1.0, 2.0, 4.0, 8.0, 16.0]
 unlock_price = 100
 
 [node name="Touch3" parent="VBoxContainer" instance=ExtResource("2_f43xo")]
 layout_mode = 2
 touch_path = "res://scenes/touch_manager/mini_touch/mini_touch.tscn"
-touch_texture = ExtResource("5_pr44l")
-price_list = [250, 500, 1000, 1500, 2000]
+price_list = [250, 500, 1000, 2000, 4000]
 damage_list = [0.34, 1, 2, 4, 8]
 unlock_price = 500
 
 [node name="Touch4" parent="VBoxContainer" instance=ExtResource("2_f43xo")]
 layout_mode = 2
 touch_path = "res://scenes/touch_manager/big_shot_touch/big_shot_touch.tscn"
-touch_texture = ExtResource("6_fbjns")
 price_list = [250, 350, 450, 550, 650]
 damage_list = [2.0, 4.0, 6.0, 9.0, 14.0]
 unlock_price = 250

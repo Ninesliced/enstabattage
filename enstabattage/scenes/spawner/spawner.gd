@@ -1,4 +1,5 @@
 extends Node2D
+class_name Spawner
 
 @export_file("*.tscn") var entity_path: String
 @export var spawn_radius: float = 10.0
@@ -33,6 +34,7 @@ func _spawn_entity():
 	var vel = rng.randf_range(minimum_velocity, maximum_velocity)
 	print(pos)
 	entity.global_position = pos + position
+	entity.max_life *= Global.difficulty
 	entity.velocity = Vector2(vel, 0).rotated(angle)
 	get_parent().add_child(entity)
 
@@ -54,5 +56,5 @@ func start_round():
 	spawn_delay.start()
 
 func _on_span_timer_timeout() -> void:
-	queue_free()
+	spawn_timer.stop()
 	pass # Replace with function body.

@@ -3,6 +3,7 @@ var money = 100000
 
 var menu_manager_file = preload("res://scenes/ui/menu_manager.tscn")
 var menu_manager: MenuManager
+var difficulty = 1
 
 var is_authticated = false
 
@@ -10,7 +11,7 @@ func _ready() -> void:
 	print("====[ ENST'Abattage ]====")
 
 	process_mode = PROCESS_MODE_ALWAYS
-
+	
 	menu_manager = menu_manager_file.instantiate()
 	add_child(menu_manager)
 
@@ -39,5 +40,6 @@ func game_over():
 
 func restart():
 	money = 0
+	difficulty = 1
 	menu_manager.exit_menu()
 	get_tree().reload_current_scene()
