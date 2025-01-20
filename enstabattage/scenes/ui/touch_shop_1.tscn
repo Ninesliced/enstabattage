@@ -39,6 +39,7 @@ theme_override_constants/margin_bottom = 5
 
 [node name="TextureRect" type="TextureRect" parent="Button/MarginContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 0
 texture = SubResource("CompressedTexture2D_4cvgu")
 stretch_mode = 3

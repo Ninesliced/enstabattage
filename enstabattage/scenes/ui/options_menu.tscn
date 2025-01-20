@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cbvqj3rxx5gj6"]
+[gd_scene load_steps=6 format=3 uid="uid://bi0w4u3vdcp5i"]
 
 [ext_resource type="Theme" uid="uid://bjgel0idhd2yw" path="res://themes/main_theme.tres" id="1_enrhq"]
 [ext_resource type="Script" path="res://scenes/ui/options_menu.gd" id="2_v6owm"]
@@ -64,6 +64,10 @@ text = "Changer nom"
 layout_mode = 2
 text = "Changer liste"
 
+[node name="ResetName" type="Button" parent="MarginContainer/Buttons"]
+layout_mode = 2
+text = "Reset nom"
+
 [node name="Footer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 8
@@ -76,3 +80,4 @@ alignment = 1
 [connection signal="pressed" from="MarginContainer/HBoxContainer2/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="MarginContainer/Buttons/ChangeName" to="." method="_on_change_name_pressed"]
 [connection signal="pressed" from="MarginContainer/Buttons/ChangeList" to="." method="_on_change_list_pressed"]
+[connection signal="pressed" from="MarginContainer/Buttons/ResetName" to="." method="_on_reset_name_pressed"]

@@ -1,5 +1,5 @@
 extends Node
-var money = 0
+var money = 100000
 
 var menu_manager_file = preload("res://scenes/ui/menu_manager.tscn")
 var menu_manager: MenuManager
@@ -7,6 +7,8 @@ var menu_manager: MenuManager
 var is_authticated = false
 
 func _ready() -> void:
+	print("====[ ENST'Abattage ]====")
+
 	process_mode = PROCESS_MODE_ALWAYS
 
 	menu_manager = menu_manager_file.instantiate()

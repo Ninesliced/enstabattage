@@ -205,6 +205,10 @@ func change_player_team(new_team: String):
 	_change_player_name(new_fullname)
 
 
+func reset_name():
+	_change_player_name("")
+
+
 func _change_player_name(new_name: String):
 	print("Changing player name")
 	
