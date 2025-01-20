@@ -3,5 +3,4 @@
 [ext_resource type="PackedScene" uid="uid://dwbbquq1cd2iy" path="res://scenes/touch_manager/normal_touch/normal_touch.tscn" id="1_bnkid"]
 
 [node name="NormalTouch" instance=ExtResource("1_bnkid")]
-coodown_time = 0.15
 knockback_amount = 20
