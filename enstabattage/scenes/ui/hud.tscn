@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://d2olp7hr7jofr"]
+[gd_scene load_steps=7 format=3 uid="uid://d2olp7hr7jofr"]
 
 [ext_resource type="Theme" uid="uid://bjgel0idhd2yw" path="res://themes/main_theme.tres" id="1_nc16f"]
 [ext_resource type="Script" path="res://scenes/ui/hud.gd" id="1_wmst7"]
 [ext_resource type="Texture2D" uid="uid://55o8asjvqygf" path="res://images/ui/pause.png" id="2_w6yld"]
 [ext_resource type="PackedScene" uid="uid://dtl8x10k160bt" path="res://scenes/ui/scroll_container.tscn" id="4_wihnb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_glnew"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_wgxct"]
 shadow_size = 0
@@ -39,6 +41,7 @@ mouse_filter = 0
 
 [node name="PauseButton" type="Button" parent="MarginContainer/Buttons"]
 layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_glnew")
 icon = ExtResource("2_w6yld")
 flat = true
 

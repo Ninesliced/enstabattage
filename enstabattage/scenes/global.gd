@@ -5,6 +5,7 @@ var menu_manager_file = preload("res://scenes/ui/menu_manager.tscn")
 var menu_manager: MenuManager
 var difficulty = 1
 
+var round_number = 0
 var is_authticated = false
 
 func _ready() -> void:
@@ -36,7 +37,7 @@ func add_money(amount):
 
 func game_over():
 	menu_manager.set_menu("GameOverMenu")
-	Leaderboard.upload_score(money)
+	Leaderboard.upload_score(round_number)
 
 func restart():
 	money = 0
