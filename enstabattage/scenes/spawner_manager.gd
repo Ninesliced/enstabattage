@@ -4,7 +4,6 @@ extends Node2D
 
 var rounds
 var round_index = 0
-var round_number = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -40,13 +39,13 @@ func _on_next_round_timer_timeout() -> void:
 	else:
 		round_index = 12
 		Global.difficulty += 1
-	round_number += 1
+	Global.round_number += 1
 		
 	update_label()
 
 
 func update_label():
-	label.text = "Round " + str(round_number)
+	label.text = "Round " + str(Global.round_number)
 
 func _on_skip_to_next_round_pressed() -> void:
 	Global.money += round(next_round_timer.time_left / 2)
