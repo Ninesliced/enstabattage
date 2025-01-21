@@ -55,7 +55,7 @@ unlock_price = 100
 layout_mode = 2
 touch_path = "res://scenes/touch_manager/mini_touch/mini_touch.tscn"
 touch_texture = ExtResource("5_pr44l")
-price_list = [250, 500, 1000, 2000, 20000]
+price_list = [300, 1000, 2000, 4000, 10000]
 damage_list = [1, 2, 3, 6, 12]
 unlock_price = 300
 
