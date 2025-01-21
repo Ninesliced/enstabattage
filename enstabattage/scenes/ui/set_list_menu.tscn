@@ -1,9 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://b3b04oeu6g6m5"]
+[gd_scene load_steps=8 format=3 uid="uid://bffu5861b6nim"]
 
 [ext_resource type="Theme" uid="uid://bjgel0idhd2yw" path="res://themes/main_theme.tres" id="1_lw8q6"]
 [ext_resource type="Script" path="res://scenes/ui/set_list_menu.gd" id="2_k04j7"]
 [ext_resource type="FontFile" uid="uid://bm7ei8ouuwcd4" path="res://fonts/Awe Mono Gold.ttf" id="3_1w854"]
-[ext_resource type="PackedScene" uid="uid://qlkvlclfyrf7" path="res://scenes/ui/team_option_button.tscn" id="4_wc30c"]
+[ext_resource type="PackedScene" uid="uid://dw4a8e6pj6qp3" path="res://scenes/ui/team_option_button.tscn" id="4_wc30c"]
 [ext_resource type="FontFile" uid="uid://j5gomqfo3au6" path="res://fonts/Varnished.ttf" id="5_u71fg"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_61pei"]

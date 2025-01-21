@@ -42,5 +42,6 @@ func game_over():
 func restart():
 	money = 0
 	difficulty = 1
+	round_number = 0
 	menu_manager.exit_menu()
 	get_tree().reload_current_scene()
