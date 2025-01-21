@@ -53,11 +53,11 @@ layout_mode = 2
 touch_path = "res://scenes/touch_manager/mini_touch/mini_touch.tscn"
 price_list = [250, 500, 1000, 2000, 4000]
 damage_list = [0.34, 1, 2, 4, 8]
-unlock_price = 500
+unlock_price = 400
 
 [node name="Touch4" parent="VBoxContainer" instance=ExtResource("2_f43xo")]
 layout_mode = 2
 touch_path = "res://scenes/touch_manager/big_shot_touch/big_shot_touch.tscn"
-price_list = [250, 350, 450, 550, 650]
+price_list = [250, 400, 600, 900, 1100]
 damage_list = [2.0, 4.0, 6.0, 9.0, 14.0]
 unlock_price = 250
