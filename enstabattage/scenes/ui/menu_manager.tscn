@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://cm6ki522wkpwr" path="res://scenes/ui/autheticating_menu.tscn" id="6_as87d"]
 [ext_resource type="PackedScene" uid="uid://bmeahgw8mxa5v" path="res://scenes/ui/leaderboard_menu.tscn" id="7_fi3e8"]
 [ext_resource type="PackedScene" uid="uid://cbvqj3rxx5gj6" path="res://scenes/ui/options_menu.tscn" id="8_7ke7t"]
-[ext_resource type="PackedScene" path="res://scenes/ui/change_name_menu.tscn" id="9_xnge3"]
-[ext_resource type="PackedScene" path="res://scenes/ui/change_list_menu.tscn" id="10_r51q5"]
+[ext_resource type="PackedScene" uid="uid://8mb8neo3nth1" path="res://scenes/ui/change_name_menu.tscn" id="9_xnge3"]
+[ext_resource type="PackedScene" uid="uid://dttxnro2bbfwv" path="res://scenes/ui/change_list_menu.tscn" id="10_r51q5"]
 [ext_resource type="PackedScene" uid="uid://bffu5861b6nim" path="res://scenes/ui/set_list_menu.tscn" id="11_andxq"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_bms1h"]
