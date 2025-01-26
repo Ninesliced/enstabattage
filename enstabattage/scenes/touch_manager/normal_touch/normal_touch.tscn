@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://dwbbquq1cd2iy"]
+[gd_scene load_steps=12 format=3 uid="uid://dwbbquq1cd2iy"]
 
 [ext_resource type="Script" path="res://scenes/touch_manager/normal_touch/normal_touch.gd" id="1_u8l8g"]
 [ext_resource type="Texture2D" uid="uid://bhbefrn5cqn1s" path="res://images/particles/star_splash.png" id="2_sqtx1"]
+[ext_resource type="AudioStream" uid="uid://c6tkow3nya41a" path="res://sounds/shoot.ogg" id="3_6joi5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_77poi"]
 atlas = ExtResource("2_sqtx1")
@@ -49,6 +50,11 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_31g3u"]
 radius = 8.0
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_xkxnu"]
+random_pitch = 1.26
+streams_count = 1
+stream_0/stream = ExtResource("3_6joi5")
+
 [node name="NormalTouch" type="Area2D"]
 script = ExtResource("1_u8l8g")
 coodown_time = 0.15
@@ -70,6 +76,9 @@ autostart = true
 [node name="LifeSpanTimer" type="Timer" parent="."]
 wait_time = 0.1
 one_shot = true
+
+[node name="ShootSound" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_xkxnu")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]

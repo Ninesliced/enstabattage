@@ -14,6 +14,9 @@ var rng = RandomNumberGenerator.new()
 func _ready() -> void:
 	flash.hide()
 	hit_box.disabled = true
+
+	$ShootSound.play()
+
 	pass # Replace with function body.
 
 
@@ -32,7 +35,6 @@ func _on_start_timer_timeout() -> void:
 	hit_box.disabled = false
 	life_span_timer.start()
 	
-
 
 func _on_life_span_timer_timeout() -> void:
 	queue_free()
