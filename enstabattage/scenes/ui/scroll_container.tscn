@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://dtl8x10k160bt"]
+[gd_scene load_steps=13 format=3 uid="uid://dtl8x10k160bt"]
 
 [ext_resource type="Script" path="res://scenes/ui/scroll_container.gd" id="1_dglgy"]
 [ext_resource type="PackedScene" uid="uid://hnc5imee2bml" path="res://scenes/ui/touch_shop_1.tscn" id="2_f43xo"]
 [ext_resource type="Texture2D" uid="uid://6kn6oh0ce0je" path="res://images/touches/touch_normal.png" id="4_1ggd5"]
 [ext_resource type="Texture2D" uid="uid://ebub8ieepf0a" path="res://images/touches/touch_shot.png" id="4_vyutj"]
 [ext_resource type="Texture2D" uid="uid://b1webges54jq2" path="res://images/touches/touch_mini.png" id="5_pr44l"]
+[ext_resource type="Texture2D" uid="uid://pmdqocwrheyi" path="res://images/touches/touch_shrapnel.png" id="6_xutit"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ec27d"]
 
@@ -65,6 +66,7 @@ unlock_price = 300
 [node name="Touch4" parent="VBoxContainer" instance=ExtResource("2_f43xo")]
 layout_mode = 2
 touch_path = "res://scenes/touch_manager/big_shot_touch/big_shot_touch.tscn"
+touch_texture = ExtResource("6_xutit")
 price_list = [250, 400, 600, 900, 1100]
 damage_list = [2.0, 4.0, 6.0, 9.0, 14.0]
 unlock_price = 250

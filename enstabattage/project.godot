@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="ENST'Abattage"
+config/version="0.1"
 run/main_scene="res://scenes/main.tscn"
 config/quit_on_go_back=false
 config/features=PackedStringArray("4.3", "GL Compatibility")
 boot_splash/bg_color=Color(0.894118, 1, 0.866667, 1)
 boot_splash/image="res://images/splash.png"
 boot_splash/use_filter=false
-config/icon="res://icon.svg"
+config/icon="res://images/icons.png"
 boot_splash/minimum_display_time=500
 
 [autoload]
@@ -28,7 +29,7 @@ Leaderboard="*res://scenes/leaderboard.gd"
 [display]
 
 window/size/viewport_width=135
-window/size/viewport_height=240
+window/size/viewport_height=270
 window/size/mode=2
 window/stretch/mode="viewport"
 window/stretch/aspect="keep_width"

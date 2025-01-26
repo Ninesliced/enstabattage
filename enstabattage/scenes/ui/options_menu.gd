@@ -2,9 +2,7 @@ extends Menu
 
 
 func _process(delta):	
-	var volume_val = %VolumeSlider.value
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db(volume_val))
-
+	pass
 
 func _on_back_pressed():
 	Global.menu_manager.back()
