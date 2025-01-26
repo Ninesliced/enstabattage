@@ -1,5 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://clyqecgv0s0hq"]
+[gd_scene load_steps=15 format=3 uid="uid://clyqecgv0s0hq"]
 
+[ext_resource type="PackedScene" uid="uid://btmjsud5i0klg" path="res://scenes/camera/camera.tscn" id="1_hjea3"]
 [ext_resource type="PackedScene" uid="uid://dj2dvpotg4682" path="res://scenes/spawner/spawner.tscn" id="1_igtxp"]
 [ext_resource type="Texture2D" uid="uid://dv8spmcftp2m0" path="res://images/grass.png" id="1_vab5n"]
 [ext_resource type="PackedScene" uid="uid://d2olp7hr7jofr" path="res://scenes/ui/hud.tscn" id="2_58nek"]
@@ -696,6 +697,8 @@ maximum_velocity = 30
 minimum_delay = 2.0
 maximum_delay = 2.0
 time_before_spawning_start = 0.1
+
+[node name="Camera" parent="." instance=ExtResource("1_hjea3")]
 
 [connection signal="pressed" from="CanvasLayer/Hud/SkipToNextRound" to="SpawnerManager" method="_on_skip_to_next_round_pressed"]
 [connection signal="timeout" from="SpawnerManager/NextRoundTimer" to="SpawnerManager" method="_on_next_round_timer_timeout"]
