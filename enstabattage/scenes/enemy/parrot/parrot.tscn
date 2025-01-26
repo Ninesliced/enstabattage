@@ -31,3 +31,4 @@ frame_progress = 0.0
 
 [node name="LifeDisplay" parent="." index="1"]
 visible = true
+offset_bottom = -9.0

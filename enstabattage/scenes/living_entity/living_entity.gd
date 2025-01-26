@@ -12,10 +12,12 @@ signal died
 @onready var life = max_life
 @onready var life_display = $LifeDisplay
 @onready var sprite = $Sprite2D
+@onready var animation = $Sprite2D
 
 func _ready() -> void:
 	life_display.max_value = max_life
 	init_life_display()
+	animation.play()
 
 func _process(delta: float) -> void:
 	sprite.flip_h = velocity.x > 0
