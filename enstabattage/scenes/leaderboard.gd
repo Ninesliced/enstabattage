@@ -123,7 +123,7 @@ func _init_full_name(full_name: String, fallback_username: String, fallback_team
 
 func get_leaderboards():
 	print("Getting leaderboards")
-	var url = "https://api.lootlocker.io/game/leaderboards/"+leaderboard_key+"/list?count=10"
+	var url = "https://api.lootlocker.io/game/leaderboards/"+leaderboard_key+"/list?count=100"
 	var headers = ["Content-Type: application/json", "x-session-token:"+session_token]
 	
 	# Create a request node for getting the highscore

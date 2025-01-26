@@ -13,6 +13,7 @@ stream_0/stream = ExtResource("2_wjfrb")
 damage = 0.5
 coodown_time = 0.02
 is_auto = true
+screenshake = 1
 
 [node name="ShootSound" parent="." index="4"]
 stream = SubResource("AudioStreamRandomizer_b3gt5")
