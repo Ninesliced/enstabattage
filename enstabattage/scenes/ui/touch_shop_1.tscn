@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://hnc5imee2bml"]
+[gd_scene load_steps=7 format=3 uid="uid://hnc5imee2bml"]
 
 [ext_resource type="Script" path="res://scenes/ui/touch_1.gd" id="1_ovm4f"]
 [ext_resource type="Theme" uid="uid://bjgel0idhd2yw" path="res://themes/main_theme.tres" id="2_yc7hw"]
 [ext_resource type="FontFile" uid="uid://bffeifvu6r72v" path="res://fonts/Ant Party.ttf" id="3_w7wym"]
+[ext_resource type="Texture2D" uid="uid://gserkogwhvox" path="res://images/ui/selection.png" id="4_tprjb"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4cvgu"]
 load_path = "res://.godot/imported/touch_normal.png-bd259191199c4a12c3a824b5ef74fb9e.ctex"
@@ -24,6 +25,21 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_yc7hw")
 theme_override_fonts/font = ExtResource("3_w7wym")
+
+[node name="SelectionRect" type="NinePatchRect" parent="Button"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_tprjb")
+region_rect = Rect2(0, 0, 16, 16)
+patch_margin_left = 7
+patch_margin_top = 7
+patch_margin_right = 7
+patch_margin_bottom = 7
 
 [node name="MarginContainer" type="MarginContainer" parent="Button"]
 layout_mode = 1

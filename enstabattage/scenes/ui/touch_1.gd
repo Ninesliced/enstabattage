@@ -7,6 +7,9 @@ extends VBoxContainer
 @export var damage_list = [1.0,2.0,3.0,4.0,5.0]
 @export var is_unlocked = false
 @export var unlock_price = 100
+
+@onready var selection_rect = %SelectionRect
+@onready var lock_rect = %LockRect
 @onready var button = $Button
 @onready var label = $Button/MarginContainer/Label
 @onready var texture_rect = $Button/MarginContainer/TextureRect
@@ -18,6 +21,7 @@ var touch
 var touch_manager
 var level = 0
 var max_level = len(price_list)
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	touch_manager = get_node("/root/Main/TouchManager")
@@ -25,12 +29,12 @@ func _ready() -> void:
 	touch = touch_file.instantiate()
 	texture_rect.texture = touch_texture
 	update_button_display()
-	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	selection_rect.visible = is_unlocked
+
 
 func update_button_display():
 	if not is_unlocked:
@@ -41,6 +45,7 @@ func update_button_display():
 		texture_rect.texture = touch_texture
 	else:
 		label.text = "Max"
+
 		
 func _on_button_pressed() -> void:
 	if not is_unlocked and Global.money >= unlock_price:
@@ -48,6 +53,7 @@ func _on_button_pressed() -> void:
 		is_unlocked = true
 		update_button_display()
 		touch_change(touch)
+
 	elif is_unlocked:
 		if level < max_level and Global.money >= price_list[level]:
 			Global.money -= price_list[level]
@@ -55,15 +61,16 @@ func _on_button_pressed() -> void:
 			level += 1
 			update_button_display()
 		touch_change(touch)
-	pass # Replace with function body.
+
 
 func touch_change(touch):
 	touch_manager.set_touch(touch)
 	scroll_container.unequiping(name)
 
+
 func unequip(tab_name: Variant) -> void:
 	if name != tab_name and is_unlocked:
-		label.text = "Lvl " + str(level) + "\n" + "Equip"
+		label.text = "Lvl " + str(level) + "\n" + " "
 		unlock_price = 0
 		is_unlocked = false
 		

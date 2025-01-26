@@ -25,7 +25,7 @@ VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_ywa1f")
 
 [node name="ScrollContainer" type="ScrollContainer"]
 custom_minimum_size = Vector2(1.685, 3.835)
-offset_left = 3.0
+offset_left = 4.0
 offset_top = 2.0
 offset_right = 132.0
 offset_bottom = 222.0
@@ -35,6 +35,9 @@ script = ExtResource("1_dglgy")
 [node name="VBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/separation = 0
+alignment = 1
 
 [node name="Touch1" parent="VBoxContainer" instance=ExtResource("2_f43xo")]
 layout_mode = 2
