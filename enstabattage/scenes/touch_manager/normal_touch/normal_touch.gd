@@ -8,16 +8,21 @@ class_name Touch
 @export var coodown_time = .2
 @export var is_auto = false
 @export var knockback_amount = 50
+@export var screenshake = 2
 var rng = RandomNumberGenerator.new()
+var makes_sound = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	flash.hide()
 	hit_box.disabled = true
 
-	$ShootSound.play()
+	if makes_sound:
+		$ShootSound.play()
+	var camera = get_viewport().get_camera_2d()
+	if camera is Camera:
+		camera.shake(screenshake)
 
-	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

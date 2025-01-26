@@ -9,13 +9,14 @@ extends Node2D
 var rng = RandomNumberGenerator.new()
 
 var entity_file: PackedScene
-# Called when the node enters the scene tree for the first time.
+# Called when the node enters the scene tree f	or the first time.
 func _ready() -> void:
 	entity_file = load(entity_path)
 	for i in range(shot_number):
 		var entity = entity_file.instantiate()
 		entity.position = Vector2(rng.randf_range(0, shot_radius), 0).rotated(rng.randf_range(0, TAU))
 		entity.damage = damage
+		entity.makes_sound = false
 		add_child(entity)
 
 

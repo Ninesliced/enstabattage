@@ -2,7 +2,7 @@ extends Camera2D
 class_name Camera
 
 var shake_amount = 0.0
-var shake_decrease_speed = 6.0
+var shake_decrease_speed = 12.0
 
 var _rng = RandomNumberGenerator.new()
 
@@ -13,9 +13,6 @@ func _ready():
 
 func _process(delta):
     _update_shake(delta)
-
-    if Input.is_action_just_pressed("ui_accept"):
-        shake(10)
 
 
 func _update_shake(delta):
