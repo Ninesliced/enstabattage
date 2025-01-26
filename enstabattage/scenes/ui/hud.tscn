@@ -54,19 +54,24 @@ theme = ExtResource("1_nc16f")
 text = "123"
 label_settings = SubResource("LabelSettings_wgxct")
 
-[node name="ScrollContainer" parent="." instance=ExtResource("4_wihnb")]
-custom_minimum_size = Vector2(2, 4)
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
+anchors_preset = 12
 anchor_top = 1.0
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -65.5
-offset_top = -48.0
-offset_right = 65.5
-offset_bottom = 0.0
+offset_top = -28.0
 grow_horizontal = 2
 grow_vertical = 0
+
+[node name="GunName" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_nc16f")
+vertical_alignment = 2
+
+[node name="ScrollContainer" parent="VBoxContainer" instance=ExtResource("4_wihnb")]
+custom_minimum_size = Vector2(2, 42)
+layout_mode = 2
+size_flags_vertical = 3
 
 [connection signal="pressed" from="MarginContainer/Buttons/PauseButton" to="." method="_on_pause_button_pressed"]

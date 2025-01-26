@@ -1,5 +1,5 @@
 extends Node
-var money = 10000000
+var money = 0
 
 var menu_manager_file = preload("res://scenes/ui/menu_manager.tscn")
 var menu_manager: MenuManager
