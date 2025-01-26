@@ -73,7 +73,7 @@ scale = Vector2(0.668896, 0.668896)
 entity_path = "res://scenes/touch_manager/normal_touch/normal_touch.tscn"
 
 [node name="Tower" parent="." instance=ExtResource("4_64jbq")]
-position = Vector2(66, 200)
+position = Vector2(66, 248)
 max_life = 100
 is_touchable = false
 
@@ -82,6 +82,7 @@ is_touchable = false
 [node name="Hud" parent="CanvasLayer" instance=ExtResource("2_58nek")]
 
 [node name="SkipToNextRound" type="Button" parent="CanvasLayer/Hud"]
+visible = false
 layout_mode = 0
 offset_left = 1.0
 offset_top = 172.0
