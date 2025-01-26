@@ -1,6 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://b2nlrdy8qwhlw"]
+[gd_scene load_steps=11 format=3 uid="uid://b2nlrdy8qwhlw"]
 
 [ext_resource type="Texture2D" uid="uid://dbm67nvtkeftm" path="res://images/particles/circle.png" id="1_mmptd"]
+[ext_resource type="AudioStream" uid="uid://b2q8skdt754k7" path="res://sounds/enemy_death_01.ogg" id="2_44k1p"]
+[ext_resource type="AudioStream" uid="uid://ddd1ecibuwl7w" path="res://sounds/enemy_death_02.ogg" id="3_5opbb"]
+[ext_resource type="AudioStream" uid="uid://bka700nq8vhsi" path="res://sounds/enemy_death_03.ogg" id="4_4uk84"]
+[ext_resource type="AudioStream" uid="uid://do3gcq7w6sbch" path="res://sounds/enemy_death_04.ogg" id="5_adl2y"]
+[ext_resource type="AudioStream" uid="uid://cdukp0xd4245g" path="res://sounds/enemy_death_05.ogg" id="6_j32e7"]
 
 [sub_resource type="Curve" id="Curve_70hkj"]
 max_value = 100.0
@@ -15,6 +20,16 @@ point_count = 3
 interpolation_mode = 1
 offsets = PackedFloat32Array(0, 0.486667, 1)
 colors = PackedColorArray(0.529412, 0, 0, 1, 0.398817, 0.0122507, 0.0128919, 1, 0.261066, 0.0251726, 0.0264902, 1)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_p7bn6"]
+random_pitch = 1.35
+random_volume_offset_db = 2.77
+streams_count = 5
+stream_0/stream = ExtResource("2_44k1p")
+stream_1/stream = ExtResource("3_5opbb")
+stream_2/stream = ExtResource("4_4uk84")
+stream_3/stream = ExtResource("5_adl2y")
+stream_4/stream = ExtResource("6_j32e7")
 
 [node name="DeathParticle" type="CPUParticles2D"]
 z_index = -10
@@ -35,3 +50,7 @@ scale_amount_min = 0.3
 scale_amount_max = 0.35
 scale_amount_curve = SubResource("Curve_6415w")
 color_initial_ramp = SubResource("Gradient_xuo7g")
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_p7bn6")
+autoplay = true
